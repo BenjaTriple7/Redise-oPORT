@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthyum — Benjamín Sánchez</title>
+    <link rel="stylesheet" href="Desacss.css">
+</head>
+
+<body>
+
+    <!-- Header flotante -->
+    <header class="case-header" id="caseHeader">
+        <a href="index.html" class="case-header-name">Benjamín Sánchez</a>
+        <a href="index.html#casos" class="case-header-back">← Proyectos</a>
+    </header>
+
+    <!-- Nav de progreso (pastilla flotante inferior) -->
+    <nav class="case-progress-nav" id="caseNav">
+        <div class="cpn-inner">
+            <div class="cpn-steps">
+                <a href="#problema" class="cpn-step" data-section="problema">Problema</a>
+                <a href="#analisis" class="cpn-step" data-section="analisis">Análisis</a>
+                <a href="#proceso" class="cpn-step" data-section="proceso">Proceso</a>
+                <a href="#solucion" class="cpn-step" data-section="solucion">Solución</a>
+                <a href="#resultado" class="cpn-step" data-section="resultado">Resultado</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content">
+
+        <!-- HERO -->
+        <section class="case-hero">
+            <div class="case-hero-text">
+                <p class="small">Caso de estudio</p>
+                <h1>Desaloon</h1>
+                <p class="hero-desc">
+                    Rediseño del sitio oficial de la banda enfocado en modernizar
+                    su interfaz, mejorar la adaptación móvil y potenciar la
+                    promoción del tour.
+                </p>
+                <div class="case-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Rol</span>
+                        <span class="meta-value">Diseñador UX/UI</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Herramientas</span>
+                        <span class="meta-value">Figma</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Tipo</span>
+                        <span class="meta-value">Proyecto personal</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Año</span>
+                        <span class="meta-value">2024</span>
+                    </div>
+                </div>
+            </div>
+            <div class="case-hero-visual">
+                <img src="assets/imgs/hero5.JPG" class="hero-mockup reveal-img" alt="Preview del rediseño">
+            </div>
+        </section>
+
+        <!-- PROBLEMA -->
+        <section class="section-wide" id="problema">
+            <div class="case-grid">
+                <img src="assets/imgs/imagen1.png" class="case-img-large reveal-img"
+                    alt="Sitio original de DeSaloon antes del rediseño">
+                <div class="case-text reveal" data-index="01">
+                    <p class="small">Problema</p>
+                    <h2>Sitio genérico y sin intención de diseño</h2>
+                    <p class="case-note">
+                        El problema no era el contenido, sino la falta de criterio en su implementación.
+                    </p>
+                    <p>
+                        El sitio original presentaba una estructura básica y poco trabajada, con una
+                        interfaz que carecía de jerarquía visual y consistencia. Además, tenía problemas
+                        de adaptación en dispositivos móviles y una composición que transmitía poca
+                        intención de diseño, generando una experiencia poco atractiva para el usuario.
+                    </p>
+                    <p>
+                        Esto provocaba desinterés y abandono, afectando directamente la percepción de
+                        profesionalismo de la banda y el impacto de su promoción.
+                    </p>
+                    <div class="findings-list">
+                        <div class="finding">
+                            <span class="finding-dot"></span>
+                            Sin jerarquía visual entre título, imagen y contenido
+                        </div>
+                        <div class="finding">
+                            <span class="finding-dot"></span>
+                            Layout roto en viewports menores a 768px
+                        </div>
+                        <div class="finding">
+                            <span class="finding-dot"></span>
+                            Fechas del tour enterradas fuera del fold
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ANÁLISIS -->
+        <section class="section-wide" id="analisis">
+            <div class="case-grid reverse">
+                <div class="case-text reveal" data-index="02">
+                    <p class="small">Análisis</p>
+                    <h2>Foco visual mal distribuido</h2>
+                    <p class="case-note">
+                        Elementos mal jerarquizados reducían el impacto del contenido principal.
+                    </p>
+                    <p>
+                        La composición del sitio estaba dominada por una imagen que superaba el alto de
+                        la pantalla, desplazando el contenido relevante —como las fechas del tour— fuera
+                        del foco inicial del usuario. Esto rompía la lógica de exploración y debilitaba
+                        la intención principal del sitio.
+                    </p>
+                    <p>
+                        Además, se detectaron inconsistencias visuales y una falta de sistema en el uso
+                        de tipografías, tamaños y espaciados, lo que generaba ruido visual y una lectura
+                        poco fluida.
+                    </p>
+                </div>
+                <img src="assets/imgs/imagen2.png" class="case-img-large reveal-img"
+                    alt="Análisis de problemas visuales del sitio original">
+            </div>
+        </section>
+
+        <!-- PROCESO -->
+        <section class="section-wide" id="proceso">
+            <div class="process-phases">
+                <div class="phase">
+                    <span class="phase-num">01</span>
+                    <span class="phase-name">Benchmark</span>
+                </div>
+                <div class="phase-arrow">→</div>
+                <div class="phase">
+                    <span class="phase-num">02</span>
+                    <span class="phase-name">Auditoría</span>
+                </div>
+                <div class="phase-arrow">→</div>
+                <div class="phase">
+                    <span class="phase-num">03</span>
+                    <span class="phase-name">Wireframes</span>
+                </div>
+                <div class="phase-arrow">→</div>
+                <div class="phase active">
+                    <span class="phase-num">04</span>
+                    <span class="phase-name">Visual</span>
+                </div>
+                <div class="phase-arrow">→</div>
+                <div class="phase">
+                    <span class="phase-num">05</span>
+                    <span class="phase-name">Entrega</span>
+                </div>
+            </div>
+            <div class="case-grid">
+                <img src="assets/imgs/estructura2.JPG" class="case-img-large reveal-img" alt="Wireframes del proceso">
+                <div class="case-text reveal" data-index="03">
+                    <p class="small">Proceso</p>
+                    <h2>Replanteamiento estructural y visual</h2>
+                    <p class="case-note">
+                        Se abordó el rediseño desde la arquitectura de la información hasta el detalle visual.
+                    </p>
+                    <p>
+                        Se desarrolló un proceso de análisis que incluyó benchmarking de sitios de bandas,
+                        definición de jerarquía de contenido y exploración visual mediante wireframes
+                        y referencias gráficas.
+                    </p>
+                    <p>
+                        Se eliminaron elementos que no aportaban valor —como imágenes redundantes y títulos
+                        sobredimensionados— y se reorganizó el contenido para priorizar las fechas del tour.
+                        Al mismo tiempo, se mantuvieron componentes clave del sitio original, integrándolos
+                        dentro de una estructura más coherente y dinámica.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUCIÓN -->
+        <section class="section-wide" id="solucion">
+            <div class="case-grid reverse">
+                <div class="case-text reveal" data-index="04">
+                    <p class="small">Solución</p>
+                    <h2>Interfaz dinámica y orientada al contenido</h2>
+                    <p class="case-note">
+                        Cada decisión responde a una intención clara dentro de la experiencia.
+                    </p>
+                    <p>
+                        Se rediseñó la arquitectura del sitio priorizando las fechas del tour como
+                        elemento principal, facilitando su acceso y lectura. Se incorporó una galería
+                        conectada al contenido visual de la banda, reforzando su identidad y presencia digital.
+                    </p>
+                    <p>
+                        Se añadió un footer estructurado con enlaces a redes sociales y un tratamiento visual
+                        coherente, reemplazando una solución básica del sitio original. Además, se integró un
+                        efecto visual sutil en el fondo para aportar dinamismo sin interferir en la lectura.
+                    </p>
+                    <p>
+                        El resultado es una interfaz más moderna, adaptable y alineada con el contexto actual
+                        de consumo digital.
+                    </p>
+                </div>
+                <div class="compare-wrapper">
+                    <div class="compare-container" id="compareContainer">
+                        <img src="assets/imgs/imagen1.png" class="compare-after" alt="Después">
+                        <div class="compare-before" id="compareBefore">
+                            <img src="assets/imgs/pagecompleta2.png" alt="Antes">
+                        </div>
+                        <div class="compare-handle" id="compareHandle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle"><span>↔</span></div>
+                            <div class="handle-line"></div>
+                        </div>
+                    </div>
+                    <div class="compare-labels">
+                        <span>Antes</span>
+                        <span>Después</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTADO -->
+        <section class="section-narrow" id="resultado">
+            <p class="small reveal" data-delay="1">Resultado</p>
+            <div class="outcome-grid">
+                <div class="outcome-card">
+                    <span class="outcome-num">100%</span>
+                    <span class="outcome-label">Responsive en todos los breakpoints</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-num">+3</span>
+                    <span class="outcome-label">Secciones nuevas con jerarquía definida</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-num">↑</span>
+                    <span class="outcome-label">Identidad visual alineada con la banda</span>
+                </div>
+            </div>
+            <h2 class="reveal" data-delay="2">Experiencia más atractiva y profesional</h2>
+            <p class="reveal" data-delay="3">
+                El rediseño transforma un sitio básico en una experiencia visual coherente,
+                donde el contenido principal se presenta con claridad y jerarquía. Esto permite
+                una navegación más intuitiva, aumenta el tiempo de permanencia y mejora la
+                percepción de profesionalismo de la banda.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+                <a href="index.html#casos" class="btn btn-ghost reveal" data-delay="3">← Volver</a>
+                <a href="https://benjatriple7.github.io/Redise-oDeSaloon/" target="_blank" class="btn btn-ghost reveal"
+                    data-delay="3">Ver sitio en vivo ↗</a>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        /* ── Header al scroll ── */
+        const header = document.getElementById('caseHeader');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+
+        /* ── Scroll reveal ── */
+        const reveals = document.querySelectorAll('.reveal, .reveal-img');
+        const revealObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealObs.observe(el));
+
+        /* ── Progress nav: aparece al salir del hero ── */
+        const caseNav = document.getElementById('caseNav');
+        const heroObs = new IntersectionObserver(([e]) => {
+            caseNav.classList.toggle('visible', !e.isIntersecting);
+        }, { threshold: 0 });
+        heroObs.observe(document.querySelector('.case-hero'));
+
+        /* ── Step activo ── */
+        const navSteps = document.querySelectorAll('.cpn-step');
+        const sectionObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    navSteps.forEach(s => s.classList.remove('active'));
+                    const active = document.querySelector(`.cpn-step[data-section="${e.target.id}"]`);
+                    if (active) active.classList.add('active');
+                }
+            });
+        }, { threshold: 0.35 });
+        document.querySelectorAll('section[id]').forEach(s => sectionObs.observe(s));
+
+        /* ── Compare slider ── */
+        const container = document.getElementById('compareContainer');
+        const beforeEl = document.getElementById('compareBefore');
+        const handleEl = document.getElementById('compareHandle');
+
+        if (container) {
+            let dragging = false;
+
+            const setPos = (x) => {
+                const r = container.getBoundingClientRect();
+                let pct = ((x - r.left) / r.width) * 100;
+                pct = Math.max(5, Math.min(95, pct));
+                beforeEl.style.width = pct + '%';
+                handleEl.style.left = pct + '%';
+            };
+
+            container.addEventListener('mousedown', (e) => { dragging = true; setPos(e.clientX); });
+            window.addEventListener('mouseup', () => dragging = false);
+            window.addEventListener('mousemove', (e) => { if (dragging) setPos(e.clientX); });
+
+            container.addEventListener('touchstart', (e) => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+            window.addEventListener('touchend', () => dragging = false);
+            window.addEventListener('touchmove', (e) => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+        }
+    </script>
+
+</body>
+
+</html>
