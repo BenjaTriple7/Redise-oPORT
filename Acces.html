@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthyum — Benjamín Sánchez</title>
+    <link rel="stylesheet" href="Desacss.css">
+</head>
+
+<body>
+
+    <!-- Header flotante -->
+    <header class="case-header" id="caseHeader">
+        <a href="index.html" class="case-header-name">Benjamín Sánchez</a>
+        <a href="index.html#casos" class="case-header-back">← Proyectos</a>
+    </header>
+
+    <!-- Nav de progreso (pastilla flotante inferior) -->
+    <nav class="case-progress-nav" id="caseNav">
+        <div class="cpn-inner">
+            <div class="cpn-steps">
+                <a href="#problema" class="cpn-step" data-section="problema">Problema</a>
+                <a href="#analisis" class="cpn-step" data-section="analisis">Análisis</a>
+                <a href="#proceso" class="cpn-step" data-section="proceso">Proceso</a>
+                <a href="#solucion" class="cpn-step" data-section="solucion">Solución</a>
+                <a href="#resultado" class="cpn-step" data-section="resultado">Resultado</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content">
+
+        <!-- HERO -->
+        <section class="case-hero">
+
+            <div class="case-hero-text">
+
+                <p class="small">Caso de estudio</p>
+
+                <h1>Mineduc Accesibilidad</h1>
+
+                <p class="hero-desc">
+                    Rediseño del sitio de Mineduc enfocado en accesibilidad,
+                    aplicando los estándares WCAG para mejorar la legibilidad,
+                    navegación y comprensión del contenido en distintos contextos de uso.
+                </p>
+
+                <div class="case-meta">
+
+                    <div class="meta-item">
+                        <span class="meta-label">Rol</span>
+                        <span class="meta-value">Diseñador UX/UI</span>
+                    </div>
+
+                    <div class="meta-item">
+                        <span class="meta-label">Herramientas</span>
+                        <span class="meta-value">Figma</span>
+                    </div>
+
+                    <div class="meta-item">
+                        <span class="meta-label">Tipo</span>
+                        <span class="meta-value">Proyecto personal</span>
+                    </div>
+
+                    <div class="meta-item">
+                        <span class="meta-label">Enfoque</span>
+                        <span class="meta-value">WCAG 2.1</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="case-hero-visual">
+
+                <picture>
+
+                    <source srcset="assets/imgs/responsacc.JPG" media="(max-width: 767px)">
+
+                    <img src="assets/imgs/heroaces.JPG" class="hero-mockup reveal-img"
+                        alt="Preview del rediseño accesible de Mineduc">
+
+                </picture>
+
+            </div>
+
+        </section>
+
+        <!-- PROBLEMA -->
+        <section class="section-wide" id="problema">
+
+            <div class="case-grid">
+
+                <img src="assets/imgs/acces1.JPG" class="case-img-large reveal-img"
+                    alt="Sitio original antes del rediseño">
+
+                <div class="case-text reveal" data-index="01">
+
+                    <p class="small">Problema</p>
+
+                    <h2>Barreras de acceso al contenido</h2>
+
+                    <p class="case-note">
+                        El sitio no fallaba visualmente, pero sí en su capacidad de ser utilizado.
+                    </p>
+
+                    <p>
+                        El home del sitio presentaba múltiples problemas de accesibilidad
+                        que dificultaban la lectura y navegación, especialmente para usuarios
+                        con baja visión o que utilizan tecnologías asistidas.
+                    </p>
+
+                    <p>
+                        Entre los problemas detectados se identificó bajo contraste,
+                        uso de transparencias que afectaban la legibilidad,
+                        ausencia de textos alternativos y una estructura semántica inconsistente.
+                    </p>
+
+                    <p>
+                        Además, la interacción se veía limitada por botones de tamaño reducido,
+                        enlaces poco visibles y ausencia de atributos que permitieran
+                        una navegación clara mediante teclado o lectores de pantalla.
+                    </p>
+
+                    <div class="findings-list">
+
+                        <div class="finding">
+                            <span class="finding-dot"></span>
+                            Contraste insuficiente para lectura accesible
+                        </div>
+
+                        <div class="finding">
+                            <span class="finding-dot"></span>
+                            Jerarquía semántica inconsistente
+                        </div>
+
+                        <div class="finding">
+                            <span class="finding-dot"></span>
+                            Navegación limitada para tecnologías asistidas
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ANÁLISIS -->
+        <section class="section-wide" id="analisis">
+
+            <div class="case-grid reverse">
+
+                <div class="case-text reveal" data-index="02">
+
+                    <p class="small">Análisis</p>
+
+                    <h2>Evaluación bajo estándares de accesibilidad</h2>
+
+                    <p class="case-note">
+                        El análisis se centró en cómo el sitio respondía a los principios de accesibilidad.
+                    </p>
+
+                    <p>
+                        Se evaluó el sitio utilizando los criterios establecidos por el W3C,
+                        considerando los principios de Perceptible, Operable,
+                        Comprensible y Robusto.
+                    </p>
+
+                    <p>
+                        A partir de esto, se identificaron fallas en la jerarquía de contenidos,
+                        falta de landmarks, contrastes insuficientes y ausencia
+                        de soporte para tecnologías asistidas.
+                    </p>
+
+                    <p>
+                        Estas deficiencias no solo afectan la experiencia de usuarios
+                        con necesidades específicas, sino que también impactan
+                        la claridad general del contenido y dificultan su comprensión.
+                    </p>
+
+                </div>
+
+                <img src="assets/imgs/acces2.JPG" class="case-img-large reveal-img"
+                    alt="Evaluación de accesibilidad y navegación por teclado">
+
+            </div>
+
+        </section>
+
+        <!-- PROCESO -->
+        <section class="section-wide" id="proceso">
+
+            <div class="process-phases">
+
+                <div class="phase">
+                    <span class="phase-num">01</span>
+                    <span class="phase-name">Auditoría</span>
+                </div>
+
+                <div class="phase-arrow">→</div>
+
+                <div class="phase">
+                    <span class="phase-num">02</span>
+                    <span class="phase-name">WCAG</span>
+                </div>
+
+                <div class="phase-arrow">→</div>
+
+                <div class="phase active">
+                    <span class="phase-num">03</span>
+                    <span class="phase-name">Rediseño</span>
+                </div>
+
+                <div class="phase-arrow">→</div>
+
+                <div class="phase">
+                    <span class="phase-num">04</span>
+                    <span class="phase-name">Testing</span>
+                </div>
+
+                <div class="phase-arrow">→</div>
+
+                <div class="phase">
+                    <span class="phase-num">05</span>
+                    <span class="phase-name">Validación</span>
+                </div>
+
+            </div>
+
+            <div class="case-grid">
+
+                <img src="assets/imgs/acces3.JPG" class="case-img-large reveal-img"
+                    alt="Proceso de rediseño responsive y accesible">
+
+                <div class="case-text reveal" data-index="03">
+
+                    <p class="small">Proceso</p>
+
+                    <h2>Definición de criterios WCAG</h2>
+
+                    <p class="case-note">
+                        Se establecieron parámetros concretos para guiar el rediseño.
+                    </p>
+
+                    <p>
+                        A partir del análisis, se definieron criterios basados en WCAG 2.1,
+                        priorizando la legibilidad, la correcta estructura semántica
+                        y la navegación asistida.
+                    </p>
+
+                    <p>
+                        Se establecieron indicadores clave como contraste mínimo 4.5:1,
+                        jerarquía adecuada de encabezados, uso de textos alternativos,
+                        implementación de landmarks y estados de foco visibles.
+                    </p>
+
+                    <p>
+                        Estos lineamientos permitieron abordar el rediseño de forma estructurada,
+                        asegurando coherencia entre diseño visual y funcionalidad accesible.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SOLUCIÓN -->
+        <section class="section-wide" id="solucion">
+
+            <div class="case-grid reverse">
+
+                <div class="case-text reveal" data-index="04">
+
+                    <p class="small">Solución</p>
+
+                    <h2>Rediseño centrado en accesibilidad</h2>
+
+                    <p class="case-note">
+                        Cada ajuste responde a un criterio funcional, no solo visual.
+                    </p>
+
+                    <p>
+                        Se rediseñó la interfaz corrigiendo los problemas de contraste
+                        y eliminando transparencias que afectaban la lectura.
+                    </p>
+
+                    <p>
+                        Se reorganizó la estructura del contenido mediante una jerarquía
+                        semántica clara, incorporando encabezados adecuados y landmarks
+                        que facilitan la navegación mediante tecnologías asistidas.
+                    </p>
+
+                    <p>
+                        Además, se añadieron textos alternativos en todas las imágenes,
+                        se ampliaron los elementos interactivos y se implementaron
+                        atributos ARIA para reforzar la comprensión del contenido.
+                    </p>
+
+                    <p>
+                        La tipografía y los espacios fueron ajustados para mejorar
+                        la legibilidad y el escaneo visual, generando una experiencia
+                        más clara y accesible.
+                    </p>
+
+                </div>
+
+                <div class="compare-wrapper">
+
+                    <div class="compare-container" id="compareContainer">
+
+                        <img src="assets/imgs/accesfinal2.JPG" class="compare-after" alt="Resultado final accesible">
+
+                        <div class="compare-before" id="compareBefore">
+
+                            <img src="assets/imgs/acces1.JPG" alt="Versión original del sitio">
+
+                        </div>
+
+                        <div class="compare-handle" id="compareHandle">
+
+                            <div class="handle-line"></div>
+
+                            <div class="handle-circle">
+                                <span>↔</span>
+                            </div>
+
+                            <div class="handle-line"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="compare-labels">
+                        <span>Antes</span>
+                        <span>Después</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- RESULTADO -->
+        <section class="section-narrow" id="resultado">
+
+            <p class="small reveal" data-delay="1">Resultado</p>
+
+            <div class="outcome-grid">
+
+                <div class="outcome-card">
+                    <span class="outcome-num">WCAG</span>
+                    <span class="outcome-label">
+                        Criterios de accesibilidad aplicados correctamente
+                    </span>
+                </div>
+
+                <div class="outcome-card">
+                    <span class="outcome-num">↑</span>
+                    <span class="outcome-label">
+                        Mejor legibilidad y navegación asistida
+                    </span>
+                </div>
+
+                <div class="outcome-card">
+                    <span class="outcome-num">100%</span>
+                    <span class="outcome-label">
+                        Experiencia más clara e inclusiva
+                    </span>
+                </div>
+
+            </div>
+
+            <h2 class="reveal" data-delay="2">
+                Experiencia más clara e inclusiva
+            </h2>
+
+            <p class="reveal" data-delay="3">
+                El rediseño permite una navegación más clara,
+                mejora la legibilidad del contenido y facilita
+                la interacción para usuarios con distintas capacidades.
+            </p>
+
+            <p class="reveal" data-delay="3">
+                La estructura del sitio ahora responde a estándares
+                de accesibilidad, permitiendo una experiencia
+                más inclusiva, coherente y comprensible.
+            </p>
+
+            <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+
+                <a href="index.html#proyectos" class="btn btn-ghost reveal" data-delay="3">
+                    ← Volver
+                </a>
+
+                <a href="https://www.behance.net/gallery/239774529/Auditoria-de-Accesibilidad-y-re-diseno"
+                    target="_blank" class="btn btn-ghost reveal" data-delay="3">
+                    Ver Behance ↗
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+        /* ── Header al scroll ── */
+        const header = document.getElementById('caseHeader');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+
+        /* ── Scroll reveal ── */
+        const reveals = document.querySelectorAll('.reveal, .reveal-img');
+        const revealObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealObs.observe(el));
+
+        /* ── Progress nav: aparece al salir del hero ── */
+        const caseNav = document.getElementById('caseNav');
+        const heroObs = new IntersectionObserver(([e]) => {
+            caseNav.classList.toggle('visible', !e.isIntersecting);
+        }, { threshold: 0 });
+        heroObs.observe(document.querySelector('.case-hero'));
+
+        /* ── Step activo ── */
+        const navSteps = document.querySelectorAll('.cpn-step');
+        const sectionObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    navSteps.forEach(s => s.classList.remove('active'));
+                    const active = document.querySelector(`.cpn-step[data-section="${e.target.id}"]`);
+                    if (active) active.classList.add('active');
+                }
+            });
+        }, { threshold: 0.35 });
+        document.querySelectorAll('section[id]').forEach(s => sectionObs.observe(s));
+
+        /* ── Compare slider ── */
+        const container = document.getElementById('compareContainer');
+        const beforeEl = document.getElementById('compareBefore');
+        const handleEl = document.getElementById('compareHandle');
+
+        if (container) {
+            let dragging = false;
+
+            const setPos = (x) => {
+                const r = container.getBoundingClientRect();
+                let pct = ((x - r.left) / r.width) * 100;
+                pct = Math.max(5, Math.min(95, pct));
+                beforeEl.style.width = pct + '%';
+                handleEl.style.left = pct + '%';
+            };
+
+            container.addEventListener('mousedown', (e) => { dragging = true; setPos(e.clientX); });
+            window.addEventListener('mouseup', () => dragging = false);
+            window.addEventListener('mousemove', (e) => { if (dragging) setPos(e.clientX); });
+
+            container.addEventListener('touchstart', (e) => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+            window.addEventListener('touchend', () => dragging = false);
+            window.addEventListener('touchmove', (e) => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+        }
+    </script>
+
+</body>
+
+</html>
