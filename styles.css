@@ -215,7 +215,369 @@ a {
 }
 
 /* Hero right — abstract visual grid */
+
+/* =========================================
+   HERO RIGHT
+========================================= */
+
 .hero-right {
+    position: relative;
+    height: 520px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+/* =========================================
+   SYSTEM CONTAINER
+========================================= */
+
+.hero-system {
+    position: relative;
+
+    width: 100%;
+    max-width: 560px;
+    height: 460px;
+
+    border: 1px solid rgba(255, 255, 255, .06);
+
+    background:
+        linear-gradient(180deg,
+            rgba(255, 255, 255, .02),
+            rgba(255, 255, 255, .005));
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        border-color .8s ease,
+        background .8s ease;
+}
+
+/* =========================================
+   GRID
+========================================= */
+
+.system-grid {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+
+    background-size: 42px 42px;
+
+    opacity: .18;
+
+    transition: opacity .8s ease;
+}
+
+/* =========================================
+   GUIDES
+========================================= */
+
+.guide {
+    position: absolute;
+
+    opacity: 0;
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+/* HORIZONTAL */
+
+.horizontal {
+    top: 92px;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(200, 169, 126, .5),
+            transparent);
+
+    transform: scaleX(.3);
+}
+
+/* VERTICAL */
+
+.vertical {
+    top: 0;
+    left: 52%;
+
+    width: 1px;
+    height: 100%;
+
+    background:
+        linear-gradient(transparent,
+            rgba(200, 169, 126, .45),
+            transparent);
+
+    transform: scaleY(.3);
+}
+
+/* =========================================
+   MODULES
+========================================= */
+
+.module {
+    position: absolute;
+
+    border: 1px solid rgba(255, 255, 255, .09);
+
+    background:
+        linear-gradient(180deg,
+            rgba(255, 255, 255, .04),
+            rgba(255, 255, 255, .015));
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, .25);
+
+    transition:
+        transform 1s cubic-bezier(.22, 1, .36, 1),
+        width 1s cubic-bezier(.22, 1, .36, 1),
+        height 1s cubic-bezier(.22, 1, .36, 1),
+        border-color .8s ease,
+        opacity .8s ease;
+}
+
+/* INTERNAL UI LINE */
+
+.module span {
+    position: absolute;
+
+    left: 14px;
+    right: 14px;
+    top: 16px;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, .12);
+}
+
+/* =========================================
+   CHAOTIC STATE
+========================================= */
+
+/* MAIN BLOCK */
+
+.module-1 {
+    width: 260px;
+    height: 90px;
+
+    top: 70px;
+    left: 80px;
+
+    transform:
+        rotate(-11deg) translate(30px, -10px);
+}
+
+/* FLOATING CARD */
+
+.module-2 {
+    width: 150px;
+    height: 60px;
+
+    top: 210px;
+    left: 320px;
+
+    transform:
+        rotate(14deg) translate(20px, -25px);
+}
+
+/* BROKEN SIDEBAR */
+
+.module-3 {
+    width: 90px;
+    height: 220px;
+
+    top: 120px;
+    left: 120px;
+
+    transform:
+        rotate(8deg) translate(-20px, 30px);
+}
+
+/* RANDOM ELEMENT */
+
+.module-4 {
+    width: 200px;
+    height: 70px;
+
+    bottom: 50px;
+    right: 90px;
+
+    transform:
+        rotate(-16deg) translate(20px, 20px);
+}
+
+/* =========================================
+   LABEL
+========================================= */
+
+.system-label {
+    position: absolute;
+
+    bottom: 24px;
+    left: 24px;
+
+    font-size: .72rem;
+    letter-spacing: .18em;
+
+    color: rgba(255, 255, 255, .2);
+
+    font-family: monospace;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+/* =========================================
+   HOVER = STRUCTURE FOUND
+========================================= */
+
+.hero-system:hover {
+    border-color: rgba(200, 169, 126, .15);
+
+    background:
+        linear-gradient(180deg,
+            rgba(255, 255, 255, .03),
+            rgba(255, 255, 255, .01));
+}
+
+/* GRID STRONGER */
+
+.hero-system:hover .system-grid {
+    opacity: .42;
+}
+
+/* GUIDES APPEAR */
+
+.hero-system:hover .guide {
+    opacity: 1;
+}
+
+.hero-system:hover .horizontal {
+    transform: scaleX(1);
+}
+
+.hero-system:hover .vertical {
+    transform: scaleY(1);
+}
+
+/* =========================================
+   ORDERED STATE
+========================================= */
+
+/* HEADER */
+
+.hero-system:hover .module-1 {
+    width: 320px;
+    height: 70px;
+
+    top: 60px;
+    left: 60px;
+
+    transform:
+        rotate(0deg) translate(0, 0);
+}
+
+/* CONTENT */
+
+.hero-system:hover .module-2 {
+    width: 220px;
+    height: 120px;
+
+    top: 170px;
+    left: 180px;
+
+    transform:
+        rotate(0deg) translate(0, 0);
+}
+
+/* SIDEBAR */
+
+.hero-system:hover .module-3 {
+    width: 90px;
+    height: 220px;
+
+    top: 120px;
+    left: 60px;
+
+    transform:
+        rotate(0deg) translate(0, 0);
+}
+
+/* FOOTER */
+
+.hero-system:hover .module-4 {
+    width: 340px;
+    height: 50px;
+
+    bottom: 60px;
+    left: 60px;
+
+    transform:
+        rotate(0deg) translate(0, 0);
+}
+
+/* CLEAN STRUCTURE */
+
+.hero-system:hover .module {
+    border-color: rgba(200, 169, 126, .18);
+}
+
+/* LABEL */
+
+.hero-system:hover .system-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   GLOW
+========================================= */
+
+.hero-system::before {
+    content: '';
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(rgba(200, 169, 126, .08),
+            transparent 72%);
+
+    filter: blur(50px);
+
+    pointer-events: none;
+}
+
+/* .hero-right {
     position: relative;
     height: 480px;
     animation: fadeIn 1.2s 0.3s var(--ease) both;
@@ -225,9 +587,9 @@ a {
     position: absolute;
     inset: 0;
 }
-
+ */
 /* Generated grid pattern via CSS only */
-.hero-visual-grid::before {
+/* .hero-visual-grid::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -250,10 +612,10 @@ a {
     transform: rotate(6deg);
     box-shadow: inset 0 0 60px rgba(200, 169, 126, 0.04);
     animation: float 6s ease-in-out infinite;
-}
+} */
 
 /* Floating dots decoration */
-.hero-right::before {
+/* .hero-right::before {
     content: '';
     position: absolute;
     top: 25%;
@@ -277,7 +639,7 @@ a {
     opacity: 0.5;
     border-radius: 50%;
     animation: pulse 3s 1.5s ease-in-out infinite;
-}
+} */
 
 /* ── STATEMENT ───────────────────────────────────────── */
 .statement {
