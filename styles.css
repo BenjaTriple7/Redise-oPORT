@@ -2,18 +2,18 @@
 
 /* ── TOKENS ─────────────────────────────────────────── */
 :root {
-    --bg: #152E13;           /* Forest Floor — fondo principal */
-    --surface: #1e3320;      /* Deep Canopy — tarjetas */
-    --surface-2: #2e4d2b;    /* Moss Layer — hover / superficies secundarias */
-    --border: rgba(58, 89, 56, 0.7); /* Fern — bordes sutiles */
-    --text: #EDE8D0;         /* Parchment — texto principal */
-    --text-muted: #a8b89e;   /* Sage Mist — texto secundario */
-    --text-dim: #567553;     /* Lichen — texto tenue */
-    --accent: #d4c5a9;       /* Linen — warm parchment */
-    --accent-2: #C8A97E;     /* Warm Gold */
-    --accent-hot: #C8A97E;   /* mismo gold, más énfasis */
-    --verdure: #7a9e76;      /* para labels, tags, íconos UI */
-    --understory: #4f6e4b;   /* bordes de botones ghost */
+    --bg: #0d0d0d;
+    --surface: #131313;
+    --surface-2: #1a1a1a;
+    --border: rgba(255, 255, 255, 0.07);
+    --text: #f0ede8;
+    --text-muted: #8a8680;
+    --text-dim: #4a4745;
+    --accent: #d4c5a9;
+    /* warm parchment */
+    --accent-2: #c8a97e;
+    /* gold */
+    --accent-hot: #e8d5a3;
     --serif: 'DM Serif Display', Georgia, serif;
     --sans: 'DM Sans', system-ui, sans-serif;
     --gap: clamp(4rem, 8vw, 9rem);
