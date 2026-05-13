@@ -2,7 +2,7 @@
 
 /* ── TOKENS ─────────────────────────────────────────── */
 :root {
-    --bg: #274125;           /* Forest Floor — fondo principal */
+    --bg: #152E13;           /* Forest Floor — fondo principal */
     --surface: #1e3320;      /* Deep Canopy — tarjetas */
     --surface-2: #2e4d2b;    /* Moss Layer — hover / superficies secundarias */
     --border: rgba(58, 89, 56, 0.7); /* Fern — bordes sutiles */
