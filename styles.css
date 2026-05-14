@@ -668,12 +668,13 @@ a {
     font-style: italic;
     font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     color: var(--text);
-    max-width: 22ch;
+    max-width: 49ch;
     line-height: 1.3;
     position: relative;
     z-index: 1;
 }
 
+/* ── CASES ───────────────────────────────────────────── */
 /* ── CASES ───────────────────────────────────────────── */
 .cases {
     padding: var(--gap) max(4vw, calc((100vw - var(--container)) / 2));
@@ -693,7 +694,7 @@ a {
     grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
     gap: 2rem;
-    padding: 2.2rem 0;
+    padding: 3rem 0;
     border-bottom: 1px solid var(--border);
     cursor: default;
     transition: background 0.25s var(--ease);
@@ -714,6 +715,7 @@ a {
     opacity: 1;
 }
 
+/* ── META ──────────────────────────────────────────────── */
 .case-meta {
     display: flex;
     flex-direction: column;
@@ -737,6 +739,42 @@ a {
     color: var(--accent-2);
 }
 
+/* ── VISUAL (cover + desc) ─────────────────────────────── */
+.case-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Portada */
+.case-cover {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    opacity: 0.7;
+    transition: opacity 0.4s var(--ease);
+}
+
+.case-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s var(--ease), filter 0.4s var(--ease);
+    filter: grayscale(20%);
+}
+
+.case:hover .case-cover {
+    opacity: 1;
+}
+
+.case:hover .case-cover img {
+    transform: scale(1.03);
+    filter: grayscale(0%);
+}
+
+/* Descripción */
 .case-desc p {
     font-size: 0.95rem;
     line-height: 1.65;
@@ -744,6 +782,7 @@ a {
     max-width: 45ch;
 }
 
+/* ── LINK ──────────────────────────────────────────────── */
 .case-link {
     text-align: right;
 }
@@ -777,11 +816,7 @@ a {
     width: 100%;
 }
 
-/* Case counter */
-.case:nth-child(1) {
-    counter-increment: none;
-}
-
+/* ── COUNTERS ──────────────────────────────────────────── */
 .cases article:nth-child(2) .case-tag::before {
     content: '01 · ';
 }
@@ -797,6 +832,8 @@ a {
 .cases article:nth-child(5) .case-tag::before {
     content: '04 · ';
 }
+
+
 
 /* ── ABOUT ───────────────────────────────────────────── */
 .about {
