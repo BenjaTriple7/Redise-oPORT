@@ -159,7 +159,8 @@
                 </div>
             </div>
             <div class="case-grid">
-                <img src="assets/imgs/desaloon/estructura3.JPG" class="case-img-large reveal-img" alt="Wireframes del proceso">
+                <img src="assets/imgs/desaloon/estructura3.JPG" class="case-img-large reveal-img"
+                    alt="Wireframes del proceso">
                 <div class="case-text reveal" data-index="03">
                     <p class="small">Proceso</p>
                     <h2>Replanteamiento estructural y visual</h2>
@@ -225,6 +226,46 @@
             </div>
         </section>
 
+        <section class="approval">
+            <div class="approval-inner">
+
+                <div class="approval-label">
+                    <span class="small">Validación</span>
+                </div>
+
+                <div class="approval-content">
+
+                    <div class="approval-screenshot">
+                        <div class="screenshot-bar">
+                            <span></span><span></span><span></span>
+                        </div>
+
+                        <img src="assets/imgs/desaloon/aprobado.jpg" alt="Respuesta de De Saloon en Instagram"
+                            loading="lazy">
+                    </div>
+
+                    <div class="approval-text">
+
+                        <p class="approval-eyebrow small">
+                            Reconocimiento directo
+                        </p>
+
+                        <h2>El proyecto llegó a la banda ;)</h2>
+
+                        <p>
+                            Una vez finalizado el rediseño, compartí el proyecto directamente
+                            con el cantante de De Saloon a través de Instagram. La respuesta
+                            confirmó que la propuesta logró transmitir correctamente la identidad,
+                            intención y experiencia que buscaba construir para la banda.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
         <!-- RESULTADO -->
         <section class="section-narrow" id="resultado">
             <p class="small reveal" data-delay="1">Resultado</p>
@@ -257,69 +298,7 @@
         </section>
 
     </main>
-
-    <script>
-        /* ── Header al scroll ── */
-        const header = document.getElementById('caseHeader');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 60);
-        }, { passive: true });
-
-        /* ── Scroll reveal ── */
-        const reveals = document.querySelectorAll('.reveal, .reveal-img');
-        const revealObs = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
-            });
-        }, { threshold: 0.1 });
-        reveals.forEach(el => revealObs.observe(el));
-
-        /* ── Progress nav: aparece al salir del hero ── */
-        const caseNav = document.getElementById('caseNav');
-        const heroObs = new IntersectionObserver(([e]) => {
-            caseNav.classList.toggle('visible', !e.isIntersecting);
-        }, { threshold: 0 });
-        heroObs.observe(document.querySelector('.case-hero'));
-
-        /* ── Step activo ── */
-        const navSteps = document.querySelectorAll('.cpn-step');
-        const sectionObs = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    navSteps.forEach(s => s.classList.remove('active'));
-                    const active = document.querySelector(`.cpn-step[data-section="${e.target.id}"]`);
-                    if (active) active.classList.add('active');
-                }
-            });
-        }, { threshold: 0.35 });
-        document.querySelectorAll('section[id]').forEach(s => sectionObs.observe(s));
-
-        /* ── Compare slider ── */
-        const container = document.getElementById('compareContainer');
-        const beforeEl = document.getElementById('compareBefore');
-        const handleEl = document.getElementById('compareHandle');
-
-        if (container) {
-            let dragging = false;
-
-            const setPos = (x) => {
-                const r = container.getBoundingClientRect();
-                let pct = ((x - r.left) / r.width) * 100;
-                pct = Math.max(5, Math.min(95, pct));
-                beforeEl.style.width = pct + '%';
-                handleEl.style.left = pct + '%';
-            };
-
-            container.addEventListener('mousedown', (e) => { dragging = true; setPos(e.clientX); });
-            window.addEventListener('mouseup', () => dragging = false);
-            window.addEventListener('mousemove', (e) => { if (dragging) setPos(e.clientX); });
-
-            container.addEventListener('touchstart', (e) => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
-            window.addEventListener('touchend', () => dragging = false);
-            window.addEventListener('touchmove', (e) => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
-        }
-    </script>
-
+    <script src="Casos.js"></script>
 </body>
 
 </html>

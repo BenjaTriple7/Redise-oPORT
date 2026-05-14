@@ -277,3 +277,58 @@ if (heroVisual) {
         heroVisual.style.transform = `translateY(${y * 0.18}px)`;
     }, { passive: true });
 }
+
+
+/* ========================================
+   CREDITS MODAL
+======================================== */
+
+const creditsModal = document.getElementById('creditsModal');
+
+const openCredits = document.getElementById('openCredits');
+
+const closeCredits = document.getElementById('closeCredits');
+
+/* OPEN */
+
+openCredits.addEventListener('click', () => {
+
+    creditsModal.classList.add('active');
+
+    document.body.style.overflow = 'hidden';
+
+});
+
+/* CLOSE */
+
+function closeCreditsModal() {
+
+    creditsModal.classList.remove('active');
+
+    document.body.style.overflow = '';
+
+}
+
+/* BUTTON */
+
+closeCredits.addEventListener('click', closeCreditsModal);
+
+/* ESC */
+
+window.addEventListener('keydown', (e) => {
+
+    if (e.key === 'Escape') {
+        closeCreditsModal();
+    }
+
+});
+
+/* CLICK OUTSIDE */
+
+creditsModal.addEventListener('click', (e) => {
+
+    if (e.target === creditsModal) {
+        closeCreditsModal();
+    }
+
+});

@@ -210,103 +210,180 @@
         </section>
 
         <!-- SOBRE MÍ -->
-        <section class="about" id="sobre">
-            <div class="about-inner">
+        <!-- PERFIL -->
+        <section class="profile" id="sobre">
+            <div class="profile-grid">
 
-                <div class="about-left">
-                    <p class="small">Quién soy</p>
+                <!-- BIO -->
+                <div class="profile-card profile-bio">
+                    <span class="card-label">Quién soy</span>
                     <h2>Sobre mí</h2>
+                    <p>Desarrollador front-end enfocado en el rediseño de sitios web, combinando una mirada creativa con
+                        un enfoque lógico para resolver problemas reales de comunicación digital.</p>
+                    <p>Trabajo sobre sitios sin dirección clara, identificando problemas de jerarquía, inconsistencias
+                        visuales y fallas en la presentación del contenido.</p>
+                    <a href="sobre.html" class="card-link">Leer más →</a>
                 </div>
 
-                <div class="about-right">
-                    <p>
-                        Soy desarrollador front-end enfocado en el rediseño de sitios web,
-                        combinando una mirada creativa con un enfoque lógico para resolver
-                        problemas reales de comunicación digital.
-                    </p>
+                <!-- MÉTODO -->
+                <div class="profile-card profile-method">
+                    <span class="card-label">Proceso</span>
+                    <h3>Enfoque de trabajo</h3>
+                    <p>Comprendo el problema antes de proponer soluciones. Cada proyecto se aborda desde el análisis, la
+                        estructura y la implementación técnica.</p>
+                    <a href="metodo.html" class="card-link">Ver proceso →</a>
+                </div>
 
-                    <p>
-                        Trabajo sobre sitios que no tienen una dirección clara, identificando
-                        problemas de jerarquía, inconsistencias visuales y fallas en la
-                        presentación del contenido.
-                    </p>
+                <!-- SKILLS -->
+                <div class="profile-card profile-skills">
+                    <span class="card-label">Stack</span>
+                    <h3>Habilidades</h3>
+                    <ul class="profile-skills-list">
+                        <li>Figma</li>
+                        <li>HTML / CSS</li>
+                        <li>JavaScript</li>
+                        <li>Sass</li>
+                        <li>WordPress</li>
+                        <li>Bootstrap</li>
+                        <li>Elementor</li>
+                        <li>PHP</li>
+                    </ul>
+                    <span class="card-label" style="margin-top: 1rem; display: block;">Próximamente</span>
+                    <ul class="profile-skills-list profile-skills-soon">
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                    <a href="habilidades.html" class="card-link">Ver stack →</a>
+                </div>
 
-                    <p>
-                        Mi proceso parte desde la investigación, involucrándome con el cliente
-                        para entender su contexto, usuarios y objetivos antes de tomar
-                        decisiones de diseño o desarrollo.
-                    </p>
-
-                    <p>
-                        Busco integrarme a equipos donde exista interés real por construir
-                        productos digitales bien pensados, con enfoque en análisis y mejora continua.
-                    </p>
+                <!-- CONTACTO -->
+                <div class="profile-card profile-contact">
+                    <span class="card-label">Contacto</span>
+                    <h3>Hablemos</h3>
+                    <p>Disponible para oportunidades laborales y proyectos digitales.</p>
+                    <div class="profile-contact-links">
+                        <a href="mailto:tu@email.com" class="btn">Enviar email</a>
+                        <a href="#" class="btn btn-ghost">LinkedIn</a>
+                    </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- METODOLOGÍA -->
-        <section class="method" id="metodologia">
-            <div class="method-inner">
+        <!-- ========================================
+     OPEN CREDITS BUTTON
+======================================== -->
 
-                <div class="method-left">
-                    <p class="small">Proceso</p>
-                    <h2>Enfoque de trabajo</h2>
-                </div>
+        <div class="credits-trigger-wrap">
+            <button class="credits-trigger" id="openCredits">
+                Ver créditos
+            </button>
+        </div>
 
-                <div class="method-right">
-                    <p>
-                        Mi proceso se basa en comprender el problema antes de proponer soluciones.
-                        Cada proyecto se aborda desde el análisis, la estructura y la implementación técnica.
+        <!-- ========================================
+     CREDITS MODAL
+======================================== -->
+
+        <div class="credits-modal" id="creditsModal">
+
+            <!-- CLOSE -->
+            <button class="credits-close" id="closeCredits">
+                ✕
+            </button>
+
+            <!-- FILM GRAIN -->
+            <div class="credits-noise"></div>
+
+            <!-- CONTENT -->
+            <div class="credits-scroll">
+
+                <div class="credits-block">
+
+                    <p class="credits-small">
+                        Portafolio diseñado y desarrollado por
                     </p>
+
+                    <h2 class="credits-name">
+                        Benjamín Sánchez
+                    </h2>
+
+                </div>
+
+                <div class="credits-block">
+
+                    <p class="credits-role">
+                        UX Research
+                    </p>
+
+                    <p class="credits-role">
+                        Front-end Development
+                    </p>
+
+                    <p class="credits-role">
+                        UI Systems
+                    </p>
+
+                    <p class="credits-role">
+                        Performance Optimization
+                    </p>
+
+                    <p class="credits-role">
+                        Information Architecture
+                    </p>
+
+                    <p class="credits-role">
+                        Motion & Interaction
+                    </p>
+
+                </div>
+
+                <div class="credits-block">
+
+                    <p class="credits-title">
+                        Agradecimientos
+                    </p>
+
+                    <p class="credits-text">
+                        A mi pareja que estuvo en los altos y bajos. Por su confianza, su apoyo y su paciencia, Te amo
+                        vida mia
+                    </p>
+
+                    <p class="credits-text">
+                        A mi familia por el apoyo
+                    </p>
+
+                    <p class="credits-text">
+                        A mi circulo de amigos, gracias tambien por el apoyo, por los buenos y malos momentos, he
+                        drisfrutado cada momento, gracias Martín, Maxi, Matias, Yhojan
+                    </p>
+
+                    <p class="credits-text">
+                        A las personas que están, a los que no están, a los lejanos, a los que fueron, a los que pasaron. 
+                    </p>
+
+                    <p class="credits-text">
+                        A mis profesores de todos los años, fueron increíbles
+                    </p>
+
+                    <p class="credits-text">
+                        Y a todos los sitios mal estructurados
+                        que me dieron algo que resolver.
+                    </p>
+
+                </div>
+
+                <div class="credits-block">
+
+                    <p class="credits-ending">
+                        No more sections below.
+                    </p>
+
                 </div>
 
             </div>
-        </section>
 
-        <!-- HABILIDADES -->
-        <section class="skills" id="habilidades">
-
-            <p class="small">Stack</p>
-            <h2>Habilidades</h2>
-
-            <ul class="skills-list">
-                <li>Figma</li>
-                <li>HTML / CSS</li>
-                <li>JavaScript</li>
-                <li>Sass</li>
-                <li>WordPress</li>
-                <li>Bootstrap</li>
-                <li>Elementor</li>
-                <li>PHP</li>
-            </ul>
-            <h2>Proximamente</h2>
-            <ul class="skills-list">
-                <li>React</li>
-                <li>Node.js</li>
-                <li>tailwind css</li>
-            </ul>
-
-        </section>
-
-        <!-- CONTACTO -->
-        <section class="contact" id="contacto">
-
-            <p class="small">Contacto</p>
-            <h2>Hablemos</h2>
-
-            <p>
-                Disponible para oportunidades laborales y proyectos digitales.
-                Interesado en integrarme a equipos donde pueda aportar desde el análisis y desarrollo.
-            </p>
-
-            <div class="contact-links">
-                <a href="mailto:tu@email.com" class="btn">Enviar email</a>
-                <a href="#" class="btn btn-ghost">LinkedIn</a>
-            </div>
-
-        </section>
+        </div>
 
     </main>
     <footer></footer>
