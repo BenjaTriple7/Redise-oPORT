@@ -118,6 +118,7 @@ a {
     cursor: pointer;
     transition: background 0.25s var(--ease), color 0.25s var(--ease), transform 0.2s var(--ease), box-shadow 0.25s var(--ease);
     white-space: nowrap;
+    cursor: none;
 }
 
 .btn:hover {
@@ -275,6 +276,7 @@ a {
     opacity: .18;
 
     transition: opacity .8s ease;
+    cursor: none;
 }
 
 /* =========================================
@@ -382,6 +384,7 @@ a {
 
     transform:
         rotate(-11deg) translate(30px, -10px);
+    cursor: none;
 }
 
 /* FLOATING CARD */
@@ -395,6 +398,7 @@ a {
 
     transform:
         rotate(14deg) translate(20px, -25px);
+    cursor: none;
 }
 
 /* BROKEN SIDEBAR */
@@ -408,6 +412,7 @@ a {
 
     transform:
         rotate(8deg) translate(-20px, 30px);
+    cursor: none;
 }
 
 /* RANDOM ELEMENT */
@@ -421,6 +426,7 @@ a {
 
     transform:
         rotate(-16deg) translate(20px, 20px);
+    cursor: none;
 }
 
 /* =========================================
@@ -447,6 +453,7 @@ a {
     transition:
         opacity .8s ease,
         transform .8s ease;
+    cursor: none;
 }
 
 /* =========================================
@@ -699,6 +706,7 @@ a {
     cursor: default;
     transition: background 0.25s var(--ease);
     position: relative;
+    cursor: none;
 }
 
 .case::before {
@@ -763,6 +771,7 @@ a {
     display: block;
     transition: transform 0.6s var(--ease), filter 0.4s var(--ease);
     filter: grayscale(20%);
+    cursor: none;
 }
 
 .case:hover .case-cover {
@@ -795,6 +804,7 @@ a {
     position: relative;
     transition: color 0.2s var(--ease);
     padding-bottom: 2px;
+    cursor: none;
 }
 
 .case-link a::after {
@@ -920,6 +930,7 @@ a {
     position: relative;
     padding-bottom: 2px;
     transition: color 0.2s var(--ease);
+    cursor: none;
 }
 
 .card-link::after {
@@ -1158,6 +1169,7 @@ a {
     transition:
         color .4s var(--ease),
         transform .4s var(--ease);
+    cursor: none;
 }
 
 .credits-trigger:hover {
@@ -1273,13 +1285,13 @@ a {
 .credits-block {
     margin-bottom: 9rem;
 
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
 
-    align-items:center;
-    justify-content:center;
+    align-items: center;
+    justify-content: center;
 
-    text-align:center;
+    text-align: center;
 
 }
 

@@ -162,7 +162,7 @@ navStyle.textContent = `
     text-decoration: none;
     opacity: 0.6;
     transition: opacity 0.2s;
-    cursor: pointer;
+    cursor: none;
   }
   #floating-nav a:hover { opacity: 1; }
   .nav-links { display: flex; gap: 2rem; }
