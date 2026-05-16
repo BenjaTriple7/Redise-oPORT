@@ -1,0 +1,89 @@
+/* ── PAGE HERO ───────────────────────────────────────────── */
+
+.page-hero {
+    padding: clamp(5rem, 9vw, 8rem) max(4vw, calc((100vw - var(--container)) / 2)) 4rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.page-hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* ── PAGE SECTIONS ───────────────────────────────────────── */
+
+.page-section {
+    padding: clamp(3.5rem, 6vw, 6rem) max(4vw, calc((100vw - var(--container)) / 2));
+    border-bottom: 1px solid var(--border);
+}
+
+/* Fondo alternado en pares para separar visualmente las secciones */
+.page-section:nth-child(even) {
+    background: var(--surface);
+}
+
+.page-section-inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* ── HEADER DE SECCIÓN ───────────────────────────────────── */
+
+.page-section-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: sticky;
+    top: 4rem;
+    /* queda anclado mientras scrolleas el body */
+}
+
+/* ── BODY DE SECCIÓN ─────────────────────────────────────── */
+
+.page-section-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.page-section-body p {
+    border-left: 2px solid var(--border);
+    padding-left: 1.5rem;
+    transition: border-color 0.3s var(--ease);
+}
+
+.page-section-body p:hover {
+    border-color: var(--accent-2);
+}
+
+/* ── SKILLS (reutiliza clases de profile-section.css) ────── */
+
+.page-skills-soon {
+    display: block;
+    margin-top: 1.25rem;
+}
+
+/* ── CONTACTO ────────────────────────────────────────────── */
+
+.page-contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+
+@media (max-width: 720px) {
+    .page-section-inner {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .page-section-header {
+        position: static;
+    }
+}

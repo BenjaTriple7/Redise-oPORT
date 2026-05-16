@@ -124,7 +124,7 @@ document.addEventListener('mouseleave', () => {
 const nav = document.createElement('nav');
 nav.id = 'floating-nav';
 nav.innerHTML = `
-  <span class="nav-name">Benjamín Sánchez</span>
+  <a href="index.html"><span class="nav-name">Benjamín Sánchez</span></a>
   <div class="nav-links">
     <a href="#casos">Casos</a>
     <a href="#sobre">Sobre mí</a>

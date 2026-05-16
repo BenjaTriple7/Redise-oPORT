@@ -1381,3 +1381,378 @@ a {
     }
 
 }
+
+/* ── PAGE HERO ───────────────────────────────────────────── */
+
+.page-hero {
+    padding: clamp(5rem, 9vw, 8rem) max(4vw, calc((100vw - var(--container)) / 2)) 4rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.page-hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* ── PAGE SECTIONS ───────────────────────────────────────── */
+
+.page-section {
+    padding: clamp(3.5rem, 6vw, 6rem) max(4vw, calc((100vw - var(--container)) / 2));
+    border-bottom: 1px solid var(--border);
+}
+
+/* Fondo alternado en pares para separar visualmente las secciones */
+.page-section:nth-child(even) {
+    background: var(--surface);
+}
+
+.page-section-inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* ── HEADER DE SECCIÓN ───────────────────────────────────── */
+
+.page-section-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: sticky;
+    top: 4rem;
+    /* queda anclado mientras scrolleas el body */
+}
+
+/* ── BODY DE SECCIÓN ─────────────────────────────────────── */
+
+.page-section-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.page-section-body p {
+    border-left: 2px solid var(--border);
+    padding-left: 1.5rem;
+    transition: border-color 0.3s var(--ease);
+}
+
+.page-section-body p:hover {
+    border-color: var(--accent-2);
+}
+
+/* ── SKILLS (reutiliza clases de profile-section.css) ────── */
+
+.page-skills-soon {
+    display: block;
+    margin-top: 1.25rem;
+}
+
+/* ── CONTACTO ────────────────────────────────────────────── */
+
+.page-contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+
+@media (max-width: 720px) {
+    .page-section-inner {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .page-section-header {
+        position: static;
+    }
+}
+
+/* ── ABOUT PAGE ──────────────────────────────────────────── */
+
+.about-page {
+    overflow-x: hidden;
+}
+
+.section-wide {
+    padding: clamp(4rem, 7vw, 7rem) max(4vw, calc((100vw - var(--container)) / 2));
+    border-top: 1px solid var(--border);
+}
+
+.section-narrow {
+    padding: clamp(4rem, 7vw, 7rem) max(4vw, calc((100vw - var(--container)) / 2));
+    border-top: 1px solid var(--border);
+    max-width: calc(var(--container) * 0.65);
+}
+
+/* ── HERO ────────────────────────────────────────────────── */
+
+.about-hero {
+    padding: clamp(6rem, 10vw, 10rem) max(4vw, calc((100vw - var(--container)) / 2)) clamp(4rem, 6vw, 6rem);
+}
+
+.about-hero-top {
+    margin-bottom: 2rem;
+}
+
+.about-hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 72ch;
+}
+
+.about-intro {
+    font-size: clamp(1rem, 1.6vw, 1.15rem) !important;
+    color: var(--text-muted);
+    border-left: 2px solid var(--accent-2);
+    padding-left: 1.5rem;
+}
+
+/* ── MANIFESTO ───────────────────────────────────────────── */
+
+.about-manifesto {
+    background: var(--surface);
+}
+
+.manifesto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+.manifesto-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: sticky;
+    top: 4rem;
+}
+
+.manifesto-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.manifesto-right p {
+    border-left: 2px solid var(--border);
+    padding-left: 1.5rem;
+    transition: border-color 0.3s var(--ease);
+}
+
+.manifesto-right p:hover {
+    border-color: var(--accent-2);
+}
+
+/* ── PROCESO ─────────────────────────────────────────────── */
+
+.process-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    border: 1px solid var(--border);
+}
+
+.process-card {
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: var(--bg);
+    transition: background 0.25s var(--ease);
+}
+
+.process-card+.process-card {
+    border-left: 1px solid var(--border);
+}
+
+.process-card:hover {
+    background: var(--surface);
+}
+
+.process-number {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    color: var(--accent-2);
+    opacity: 0.4;
+    line-height: 1;
+}
+
+.process-card h3 {
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+.process-card p {
+    font-size: 0.92rem;
+}
+
+/* ── TECH ────────────────────────────────────────────────── */
+
+.about-tech {
+    background: var(--surface);
+}
+
+.tech-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.tech-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: sticky;
+    top: 4rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-content: start;
+}
+
+.tech-item {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(200, 169, 126, 0.2);
+    border-radius: var(--radius);
+    background: rgba(200, 169, 126, 0.04);
+    transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.tech-item:hover {
+    background: rgba(200, 169, 126, 0.1);
+    border-color: rgba(200, 169, 126, 0.5);
+}
+
+.tech-item--soon {
+    opacity: 0.4;
+    font-style: italic;
+}
+
+/* ── INSPIRACIÓN ─────────────────────────────────────────── */
+
+.inspiration-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+.inspiration-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: sticky;
+    top: 4rem;
+}
+
+.inspiration-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.inspiration-text p {
+    border-left: 2px solid var(--border);
+    padding-left: 1.5rem;
+    transition: border-color 0.3s var(--ease);
+}
+
+.inspiration-text p:hover {
+    border-color: var(--accent-2);
+}
+
+/* ── CONTACTO ────────────────────────────────────────────── */
+
+.about-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-contact h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* ── REVEAL ANIMATION ────────────────────────────────────── */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.7s var(--ease),
+        transform 0.7s var(--ease);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal[data-delay="1"] {
+    transition-delay: 0.1s;
+}
+
+.reveal[data-delay="2"] {
+    transition-delay: 0.2s;
+}
+
+.reveal[data-delay="3"] {
+    transition-delay: 0.3s;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+
+@media (max-width: 860px) {
+
+    .manifesto-grid,
+    .tech-layout,
+    .inspiration-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .manifesto-left,
+    .tech-copy,
+    .inspiration-copy {
+        position: static;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-card+.process-card {
+        border-left: none;
+        border-top: 1px solid var(--border);
+    }
+}
