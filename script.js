@@ -127,9 +127,8 @@ nav.innerHTML = `
   <a href="index.html"><span class="nav-name">Benjamín Sánchez</span></a>
   <div class="nav-links">
     <a href="#casos">Casos</a>
-    <a href="#sobre">Sobre mí</a>
-    <a href="#habilidades">Stack</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#sobre">Información</a>
+    <a href="about.html">Sobre mi</a>
   </div>
 `;
 
