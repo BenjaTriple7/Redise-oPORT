@@ -553,7 +553,7 @@ a {
     object-position: top;
     filter: brightness(0.88) contrast(1.05) saturate(0.9);
     /* fix: make img fill compare-before at full container width */
-    min-width: 200%;
+    min-width: 100%;
 }
 
 .compare-handle {
