@@ -500,7 +500,7 @@ a {
     height: 70px;
 
     top: 60px;
-    left: 60px;
+    left: 120px;
 
     transform:
         rotate(0deg) translate(0, 0);
@@ -509,11 +509,11 @@ a {
 /* CONTENT */
 
 .hero-system:hover .module-2 {
-    width: 220px;
-    height: 120px;
+    width: 225px;
+    height: 210px;
 
-    top: 170px;
-    left: 180px;
+    top: 135px;
+    left: 215px;
 
     transform:
         rotate(0deg) translate(0, 0);
@@ -523,10 +523,10 @@ a {
 
 .hero-system:hover .module-3 {
     width: 90px;
-    height: 220px;
+    height: 210px;
 
     top: 133px;
-    left: 60px;
+    left: 120px;
 
     transform:
         rotate(0deg) translate(0, 0);
@@ -535,11 +535,11 @@ a {
 /* FOOTER */
 
 .hero-system:hover .module-4 {
-    width: 340px;
+    width: 320px;
     height: 50px;
 
     bottom: 60px;
-    left: 60px;
+    left: 120px;
 
     transform:
         rotate(0deg) translate(0, 0);
