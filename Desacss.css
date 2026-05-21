@@ -350,232 +350,256 @@ a {
     filter: brightness(1) contrast(1.04);
 }
 
-
-/* ══════════════════════════════════════════════════════
-   CASE NARRATIVE — Sistema con hilo conductor vertical
-   Añadir a tu CSS existente (reemplaza o complementa
-   las reglas de .section-wide y .case-grid)
-   ══════════════════════════════════════════════════════ */
-
-/* ── CONTENEDOR GLOBAL ──────────────────────────────── */
-.case-narrative {
-    position: relative;
-    padding: 0 clamp(2rem, max(4vw, calc((100vw - var(--container)) / 2)), 8rem);
-}
-
-/* ── SPINE: la línea vertical que conecta todo ──────── */
-.narrative-spine {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: clamp(2rem, max(4vw, calc((100vw - var(--container)) / 2)), 8rem);
-    width: 1px;
-    background: linear-gradient(to bottom,
-            transparent 0%,
-            var(--border) 8%,
-            var(--border) 92%,
-            transparent 100%);
-    pointer-events: none;
-}
-
-/* ── SECCIÓN NARRATIVA ──────────────────────────────── */
-.narrative-section {
-    position: relative;
-    padding: clamp(4rem, 8vw, 8rem) 0 clamp(4rem, 8vw, 8rem) 3.5rem;
+/* ── SECTION WRAPPERS ────────────────────────────────── */
+.section-wide,
+.section-narrow {
+    padding: var(--section-v) clamp(2rem, max(4vw, calc((100vw - var(--container)) / 2)), 8rem);
     border-top: 1px solid var(--border);
 }
 
-.narrative-section:first-of-type {
-    border-top: none;
+.section-narrow {
+    max-width: calc(var(--container) + 16vw);
 }
 
-/* ── ANCLA DE PASO: número + etiqueta en la línea ──── */
-.step-anchor {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-    position: relative;
-}
-
-/* El nodo circular sobre la spine */
-.step-anchor::before {
-    content: '';
-    position: absolute;
-    left: -3.5rem;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--accent-2);
-    box-shadow: 0 0 0 4px rgba(200, 169, 126, 0.12);
-    z-index: 1;
-}
-
-/* En la sección activa / solución: nodo más grande */
-#solucion .step-anchor::before {
-    width: 14px;
-    height: 14px;
-    box-shadow: 0 0 0 6px rgba(200, 169, 126, 0.12), 0 0 16px rgba(200, 169, 126, 0.2);
-}
-
-.step-num {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 0.85rem;
-    color: var(--accent-2);
-    letter-spacing: 0.05em;
-    line-height: 1;
-}
-
-.step-label {
-    /* hereda .small del sistema existente */
-}
-
-/* Línea horizontal desde el nodo hasta la etiqueta */
-.step-anchor::after {
-    content: '';
-    position: absolute;
-    left: calc(-3.5rem + 5px);
-    /* desde el borde del nodo */
-    top: 50%;
-    width: 3rem;
-    height: 1px;
-    background: var(--border);
-}
-
-/* ── CONTENIDO: layouts ─────────────────────────────── */
-.narrative-content {
+/* ── CASE GRID ───────────────────────────────────────── */
+.case-grid {
     display: grid;
-    gap: 4rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
     align-items: center;
 }
 
-/* Split: dos columnas */
-.narrative-content.split {
-    grid-template-columns: 1fr 1fr;
-}
-
-/* Split invertido */
-.narrative-content.split.reverse {
+.case-grid.reverse {
     direction: rtl;
 }
 
-.narrative-content.split.reverse>* {
+.case-grid.reverse>* {
     direction: ltr;
 }
 
-/* Stacked: texto arriba, visual abajo centrado */
-.narrative-content.stacked {
-    grid-template-columns: 1fr;
+/* ── IMÁGENES ────────────────────────────────────────── */
+.case-img-large {
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+    filter: brightness(0.88) contrast(1.05) saturate(0.9);
+    transition: filter 0.4s var(--ease), transform 0.5s var(--ease);
 }
 
-/* ── NARRATIVE TEXT ─────────────────────────────────── */
-.narrative-text {
+.case-img-large:hover {
+    filter: brightness(0.96) contrast(1.04) saturate(1);
+    transform: scale(1.01);
+}
+
+/* ── CASE TEXT ───────────────────────────────────────── */
+.case-text {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    position: relative;
 }
 
-/* En stacked, el texto puede ser más ancho */
-.narrative-text.wide {
-    max-width: 680px;
+/* Número de sección decorativo */
+.case-text::before {
+    content: attr(data-index);
+    position: absolute;
+    top: -1.5rem;
+    right: 0;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 5rem;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.025);
+    pointer-events: none;
+    user-select: none;
 }
 
-/* Cuerpo de la solución: columnas de texto en pantallas grandes */
-.solution-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 2.5rem;
+.case-note {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    color: var(--accent);
+    line-height: 1.5;
+    max-width: 42ch;
+    padding-left: 1rem;
+    border-left: 2px solid rgba(200, 169, 126, 0.3);
 }
 
-.solution-body p {
-    margin: 0;
+/* ── FINDINGS LIST ───────────────────────────────────── */
+.findings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
 }
 
-/* ── COMPARE WRAPPER centrado ───────────────────────── */
-.compare-wrapper.centered {
-    max-width: 520px;
-    margin: 0 auto;
-    width: 100%;
+.finding {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
 }
 
-/* ── FASES: integradas dentro de su sección ─────────── */
-.process-phases-inline {
+.finding-dot {
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-2);
+    margin-top: 0.45em;
+    box-shadow: 0 0 8px rgba(200, 169, 126, 0.4);
+}
+
+/* ── PROCESS PHASES ──────────────────────────────────── */
+.process-phases {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     flex-wrap: wrap;
-    /* Hereda estilos de .phase, .phase.active, .phase-arrow del CSS existente */
 }
 
-/* ── REVEAL: animación de entrada por sección ───────── */
-.narrative-section {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+.phase {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    transition: border-color 0.2s, background 0.2s;
+    min-width: 90px;
 }
 
-.narrative-section.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+.phase.active {
+    border-color: rgba(200, 169, 126, 0.4);
+    background: rgba(200, 169, 126, 0.05);
 }
 
-/* ── RESPONSIVE ─────────────────────────────────────── */
-@media (max-width: 900px) {
-    .narrative-spine {
-        display: none;
-    }
-
-    .narrative-section {
-        padding-left: 0;
-    }
-
-    .step-anchor::before,
-    .step-anchor::after {
-        display: none;
-    }
-
-    .narrative-content.split,
-    .narrative-content.split.reverse {
-        grid-template-columns: 1fr;
-        direction: ltr;
-    }
-
-    .narrative-content.split.reverse>* {
-        direction: ltr;
-    }
-
-    /* En mobile, imagen siempre primero */
-    .narrative-content.split.reverse .narrative-visual {
-        order: -1;
-    }
-
-    .solution-body {
-        grid-template-columns: 1fr;
-    }
+.phase-num {
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: var(--text-dim);
 }
 
-@media (max-width: 600px) {
-    .compare-wrapper.centered {
-        max-width: 100%;
-    }
-
-    .process-phases-inline {
-        gap: 0.3rem;
-    }
-
-    .process-phases-inline .phase {
-        min-width: 72px;
-        padding: 0.6rem 0.8rem;
-    }
+.phase.active .phase-num {
+    color: var(--accent-2);
 }
 
+.phase-name {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
 
+.phase.active .phase-name {
+    color: var(--text);
+}
 
+.phase-arrow {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    padding: 0 0.15rem;
+}
 
+/* ── COMPARE SLIDER ──────────────────────────────────── */
+.compare-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.compare-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 14;
+    overflow: hidden;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+    cursor: col-resize;
+    user-select: none;
+}
+
+.compare-after,
+.compare-before {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+}
+
+.compare-after {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    filter: brightness(0.88) contrast(1.05) saturate(0.9);
+}
+
+.compare-before {
+    width: 50%;
+    overflow: hidden;
+    border-right: 2px solid var(--accent-2);
+}
+
+.compare-before img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    filter: brightness(0.88) contrast(1.05) saturate(0.9);
+    /* fix: make img fill compare-before at full container width */
+    min-width: 100%;
+}
+
+.compare-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-50%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.handle-line {
+    flex: 1;
+    width: 2px;
+    background: var(--accent-2);
+}
+
+.handle-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg);
+    font-size: 0.85rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    box-shadow: 0 0 20px rgba(200, 169, 126, 0.3);
+}
+
+.compare-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    padding: 0 0.25rem;
+}
 
 /* ── OUTCOME GRID ────────────────────────────────────── */
 .outcome-grid {

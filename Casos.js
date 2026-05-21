@@ -57,28 +57,3 @@ if (container) {
     window.addEventListener('touchend', () => dragging = false);
     window.addEventListener('touchmove', (e) => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
 }
-
-
-(function () {
-    const sections = document.querySelectorAll('.narrative-section');
-
-    if (!sections.length) return;
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // solo una vez
-                }
-            });
-        },
-        {
-            threshold: 0.08,
-            rootMargin: '0px 0px -60px 0px',
-        }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-})();
-

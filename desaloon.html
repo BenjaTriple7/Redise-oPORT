@@ -66,218 +66,165 @@
         </section>
 
         <!-- PROBLEMA -->
-        <!-- ═══════════════════════════════════════════════
-     CASE STUDY — ESTRUCTURA CON HILO CONDUCTOR
-     Reemplaza las secciones del single de caso
-     ═══════════════════════════════════════════════ -->
-
-        <!-- ── CASE NARRATIVE (contenedor global) ─────────── -->
-        <div class="case-narrative">
-
-            <!-- Spine vertical: la línea que une todo -->
-            <div class="narrative-spine" aria-hidden="true"></div>
-
-            <!-- ── PROBLEMA ─────────────────────────────── -->
-            <section class="narrative-section" id="problema" data-step="01">
-
-                <div class="step-anchor">
-                    <span class="step-num">01</span>
-                    <span class="step-label small">Problema</span>
-                </div>
-
-                <div class="narrative-content split">
-                    <div class="narrative-text">
-                        <h2>Sitio genérico y sin intención de diseño</h2>
-                        <p class="case-note">
-                            El problema no era el contenido, sino la falta de criterio en su implementación.
-                        </p>
-                        <p>
-                            El sitio original presentaba una estructura básica y poco trabajada, con una
-                            interfaz que carecía de jerarquía visual y consistencia. Además, tenía problemas
-                            de adaptación en dispositivos móviles y una composición que transmitía poca
-                            intención de diseño, generando una experiencia poco atractiva para el usuario.
-                        </p>
-                        <p>
-                            Esto provocaba desinterés y abandono, afectando directamente la percepción de
-                            profesionalismo de la banda y el impacto de su promoción.
-                        </p>
-                        <div class="findings-list">
-                            <div class="finding">
-                                <span class="finding-dot"></span>
-                                Sin jerarquía visual entre título, imagen y contenido
-                            </div>
-                            <div class="finding">
-                                <span class="finding-dot"></span>
-                                Layout roto en viewports menores a 768px
-                            </div>
-                            <div class="finding">
-                                <span class="finding-dot"></span>
-                                Fechas del tour enterradas fuera del fold
-                            </div>
+        <section class="section-wide" id="problema">
+            <div class="case-grid">
+                <img src="assets/imgs/desaloon/imagen1.png" class="case-img-large reveal-img"
+                    alt="Sitio original de DeSaloon antes del rediseño">
+                <div class="case-text reveal" data-index="01">
+                    <p class="small">Problema</p>
+                    <h2>Sitio genérico y sin intención de diseño</h2>
+                    <p class="case-note">
+                        El problema no era el contenido, sino la falta de criterio en su implementación.
+                    </p>
+                    <p>
+                        El sitio original presentaba una estructura básica y poco trabajada, con una
+                        interfaz que carecía de jerarquía visual y consistencia. Además, tenía problemas
+                        de adaptación en dispositivos móviles y una composición que transmitía poca
+                        intención de diseño, generando una experiencia poco atractiva para el usuario.
+                    </p>
+                    <p>
+                        Esto provocaba desinterés y abandono, afectando directamente la percepción de
+                        profesionalismo de la banda y el impacto de su promoción.
+                    </p>
+                    <div class="findings-list">
+                        <div class="finding">
+                            <span class="finding-dot"></span>
+                            Sin jerarquía visual entre título, imagen y contenido
                         </div>
-                    </div>
-                    <div class="narrative-visual">
-                        <img src="assets/imgs/desaloon/imagen1.png" class="case-img-large reveal-img"
-                            alt="Sitio original de DeSaloon antes del rediseño">
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- ── ANÁLISIS ──────────────────────────────── -->
-            <section class="narrative-section" id="analisis" data-step="02">
-
-                <div class="step-anchor">
-                    <span class="step-num">02</span>
-                    <span class="step-label small">Análisis</span>
-                </div>
-
-                <!-- Variación de layout: texto primero, imagen flotante a la derecha -->
-                <div class="narrative-content split reverse">
-                    <div class="narrative-visual">
-                        <img src="assets/imgs/desaloon/imagen2.png" class="case-img-large reveal-img"
-                            alt="Análisis de problemas visuales del sitio original">
-                    </div>
-                    <div class="narrative-text">
-                        <h2>Foco visual mal distribuido</h2>
-                        <p class="case-note">
-                            Elementos mal jerarquizados reducían el impacto del contenido principal.
-                        </p>
-                        <p>
-                            La composición del sitio estaba dominada por una imagen que superaba el alto de
-                            la pantalla, desplazando el contenido relevante —como las fechas del tour— fuera
-                            del foco inicial del usuario. Esto rompía la lógica de exploración y debilitaba
-                            la intención principal del sitio.
-                        </p>
-                        <p>
-                            Además, se detectaron inconsistencias visuales y una falta de sistema en el uso
-                            de tipografías, tamaños y espaciados, lo que generaba ruido visual y una lectura
-                            poco fluida.
-                        </p>
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- ── PROCESO ───────────────────────────────── -->
-            <section class="narrative-section" id="proceso" data-step="03">
-
-                <div class="step-anchor">
-                    <span class="step-num">03</span>
-                    <span class="step-label small">Proceso</span>
-                </div>
-
-                <!-- Fases: ahora integradas en la sección, no flotantes -->
-                <div class="process-phases-inline">
-                    <div class="phase">
-                        <span class="phase-num">01</span>
-                        <span class="phase-name">Benchmark</span>
-                    </div>
-                    <div class="phase-arrow" aria-hidden="true">→</div>
-                    <div class="phase">
-                        <span class="phase-num">02</span>
-                        <span class="phase-name">Auditoría</span>
-                    </div>
-                    <div class="phase-arrow" aria-hidden="true">→</div>
-                    <div class="phase">
-                        <span class="phase-num">03</span>
-                        <span class="phase-name">Wireframes</span>
-                    </div>
-                    <div class="phase-arrow" aria-hidden="true">→</div>
-                    <div class="phase active">
-                        <span class="phase-num">04</span>
-                        <span class="phase-name">Visual</span>
-                    </div>
-                    <div class="phase-arrow" aria-hidden="true">→</div>
-                    <div class="phase">
-                        <span class="phase-num">05</span>
-                        <span class="phase-name">Entrega</span>
-                    </div>
-                </div>
-
-                <div class="narrative-content split">
-                    <div class="narrative-text">
-                        <h2>Replanteamiento estructural y visual</h2>
-                        <p class="case-note">
-                            Se abordó el rediseño desde la arquitectura de la información hasta el detalle visual.
-                        </p>
-                        <p>
-                            Se desarrolló un proceso de análisis que incluyó benchmarking de sitios de bandas,
-                            definición de jerarquía de contenido y exploración visual mediante wireframes
-                            y referencias gráficas.
-                        </p>
-                        <p>
-                            Se eliminaron elementos que no aportaban valor —como imágenes redundantes y títulos
-                            sobredimensionados— y se reorganizó el contenido para priorizar las fechas del tour.
-                            Al mismo tiempo, se mantuvieron componentes clave del sitio original, integrándolos
-                            dentro de una estructura más coherente y dinámica.
-                        </p>
-                    </div>
-                    <div class="narrative-visual">
-                        <img src="assets/imgs/desaloon/estructura3.JPG" class="case-img-large reveal-img"
-                            alt="Wireframes del proceso">
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- ── SOLUCIÓN ──────────────────────────────── -->
-            <section class="narrative-section" id="solucion" data-step="04">
-
-                <div class="step-anchor">
-                    <span class="step-num">04</span>
-                    <span class="step-label small">Solución</span>
-                </div>
-
-                <!-- Solución: texto arriba full width, compare slider abajo centrado -->
-                <div class="narrative-content stacked">
-                    <div class="narrative-text wide">
-                        <h2>Interfaz dinámica y orientada al contenido</h2>
-                        <p class="case-note">
-                            Cada decisión responde a una intención clara dentro de la experiencia.
-                        </p>
-                        <div class="solution-body">
-                            <p>
-                                Se rediseñó la arquitectura del sitio priorizando las fechas del tour como
-                                elemento principal, facilitando su acceso y lectura. Se incorporó una galería
-                                conectada al contenido visual de la banda, reforzando su identidad y presencia digital.
-                            </p>
-                            <p>
-                                Se añadió un footer estructurado con enlaces a redes sociales y un tratamiento visual
-                                coherente, reemplazando una solución básica del sitio original. Además, se integró un
-                                efecto visual sutil en el fondo para aportar dinamismo sin interferir en la lectura.
-                            </p>
-                            <p>
-                                El resultado es una interfaz más moderna, adaptable y alineada con el contexto actual
-                                de consumo digital.
-                            </p>
+                        <div class="finding">
+                            <span class="finding-dot"></span>
+                            Layout roto en viewports menores a 768px
                         </div>
-                    </div>
-
-                    <!-- Compare slider como pieza central de la sección solución -->
-                    <div class="compare-wrapper centered">
-                        <div class="compare-container" id="compareContainer">
-                            <img src="assets/imgs/desaloon/antes.png" class="compare-after" alt="Después">
-                            <div class="compare-before" id="compareBefore">
-                                <img src="assets/imgs/desaloon/despues.png" alt="Antes">
-                            </div>
-                            <div class="compare-handle" id="compareHandle">
-                                <div class="handle-line"></div>
-                                <div class="handle-circle"><span>↔</span></div>
-                                <div class="handle-line"></div>
-                            </div>
-                        </div>
-                        <div class="compare-labels">
-                            <span>Antes</span>
-                            <span>Después</span>
+                        <div class="finding">
+                            <span class="finding-dot"></span>
+                            Fechas del tour enterradas fuera del fold
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-            </section>
+        <!-- ANÁLISIS -->
+        <section class="section-wide" id="analisis">
+            <div class="case-grid reverse">
+                <div class="case-text reveal" data-index="02">
+                    <p class="small">Análisis</p>
+                    <h2>Foco visual mal distribuido</h2>
+                    <p class="case-note">
+                        Elementos mal jerarquizados reducían el impacto del contenido principal.
+                    </p>
+                    <p>
+                        La composición del sitio estaba dominada por una imagen que superaba el alto de
+                        la pantalla, desplazando el contenido relevante —como las fechas del tour— fuera
+                        del foco inicial del usuario. Esto rompía la lógica de exploración y debilitaba
+                        la intención principal del sitio.
+                    </p>
+                    <p>
+                        Además, se detectaron inconsistencias visuales y una falta de sistema en el uso
+                        de tipografías, tamaños y espaciados, lo que generaba ruido visual y una lectura
+                        poco fluida.
+                    </p>
+                </div>
+                <img src="assets/imgs/desaloon/imagen2.png" class="case-img-large reveal-img"
+                    alt="Análisis de problemas visuales del sitio original">
+            </div>
+        </section>
 
-        </div>
-        <!-- /case-narrative -->
+        <!-- PROCESO -->
+        <section class="section-wide" id="proceso">
+            <div class="process-phases">
+                <div class="phase">
+                    <span class="phase-num">01</span>
+                    <span class="phase-name">Benchmark</span>
+                </div>
+                <div class="phase-arrow">→</div>
+                <div class="phase">
+                    <span class="phase-num">02</span>
+                    <span class="phase-name">Auditoría</span>
+                </div>
+                <div class="phase-arrow">→</div>
+                <div class="phase">
+                    <span class="phase-num">03</span>
+                    <span class="phase-name">Wireframes</span>
+                </div>
+                <div class="phase-arrow">→</div>
+                <div class="phase active">
+                    <span class="phase-num">04</span>
+                    <span class="phase-name">Visual</span>
+                </div>
+                <div class="phase-arrow">→</div>
+                <div class="phase">
+                    <span class="phase-num">05</span>
+                    <span class="phase-name">Entrega</span>
+                </div>
+            </div>
+            <div class="case-grid">
+                <img src="assets/imgs/desaloon/estructura3.JPG" class="case-img-large reveal-img"
+                    alt="Wireframes del proceso">
+                <div class="case-text reveal" data-index="03">
+                    <p class="small">Proceso</p>
+                    <h2>Replanteamiento estructural y visual</h2>
+                    <p class="case-note">
+                        Se abordó el rediseño desde la arquitectura de la información hasta el detalle visual.
+                    </p>
+                    <p>
+                        Se desarrolló un proceso de análisis que incluyó benchmarking de sitios de bandas,
+                        definición de jerarquía de contenido y exploración visual mediante wireframes
+                        y referencias gráficas.
+                    </p>
+                    <p>
+                        Se eliminaron elementos que no aportaban valor —como imágenes redundantes y títulos
+                        sobredimensionados— y se reorganizó el contenido para priorizar las fechas del tour.
+                        Al mismo tiempo, se mantuvieron componentes clave del sitio original, integrándolos
+                        dentro de una estructura más coherente y dinámica.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUCIÓN -->
+        <section class="section-wide" id="solucion">
+            <div class="case-grid reverse">
+                <div class="case-text reveal" data-index="04">
+                    <p class="small">Solución</p>
+                    <h2>Interfaz dinámica y orientada al contenido</h2>
+                    <p class="case-note">
+                        Cada decisión responde a una intención clara dentro de la experiencia.
+                    </p>
+                    <p>
+                        Se rediseñó la arquitectura del sitio priorizando las fechas del tour como
+                        elemento principal, facilitando su acceso y lectura. Se incorporó una galería
+                        conectada al contenido visual de la banda, reforzando su identidad y presencia digital.
+                    </p>
+                    <p>
+                        Se añadió un footer estructurado con enlaces a redes sociales y un tratamiento visual
+                        coherente, reemplazando una solución básica del sitio original. Además, se integró un
+                        efecto visual sutil en el fondo para aportar dinamismo sin interferir en la lectura.
+                    </p>
+                    <p>
+                        El resultado es una interfaz más moderna, adaptable y alineada con el contexto actual
+                        de consumo digital.
+                    </p>
+                </div>
+                <div class="compare-wrapper">
+                    <div class="compare-container" id="compareContainer">
+                        <img src="assets/imgs/desaloon/antes.png" class="compare-after" alt="Después">
+                        <div class="compare-before" id="compareBefore">
+                            <img src="assets/imgs/desaloon/despues.png" alt="Antes">
+                        </div>
+                        <div class="compare-handle" id="compareHandle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle"><span>↔</span></div>
+                            <div class="handle-line"></div>
+                        </div>
+                    </div>
+                    <div class="compare-labels">
+                        <span>Antes</span>
+                        <span>Después</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="approval">
             <div class="approval-inner">
