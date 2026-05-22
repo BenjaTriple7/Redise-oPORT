@@ -1486,7 +1486,6 @@ a {
 .section-narrow {
     padding: clamp(4rem, 7vw, 7rem) max(4vw, calc((100vw - var(--container)) / 2));
     border-top: 1px solid var(--border);
-    max-width: calc(var(--container) * 0.65);
 }
 
 /* ── HERO ────────────────────────────────────────────────── */
