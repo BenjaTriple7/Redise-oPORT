@@ -477,7 +477,6 @@ a {
 /* ── CASE GRID ───────────────────────────────────────── */
 .case-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 5rem;
     align-items: center;
 }
