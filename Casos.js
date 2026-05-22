@@ -22,16 +22,45 @@ heroObs.observe(document.querySelector('.case-hero'));
 
 /* ── Step activo ── */
 const navSteps = document.querySelectorAll('.cpn-step');
-const sectionObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            navSteps.forEach(s => s.classList.remove('active'));
-            const active = document.querySelector(`.cpn-step[data-section="${e.target.id}"]`);
-            if (active) active.classList.add('active');
+
+const sections = [
+    document.getElementById('problema'),
+    document.getElementById('analisis'),
+    document.getElementById('proceso'),
+    document.getElementById('solucion'),
+    document.getElementById('resultado')
+];
+
+window.addEventListener('scroll', () => {
+
+    let current = '';
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+            window.scrollY >= sectionTop - window.innerHeight * 0.4
+        ) {
+            current = section.getAttribute('id');
         }
+
     });
-}, { threshold: 0.35 });
-document.querySelectorAll('section[id]').forEach(s => sectionObs.observe(s));
+
+    navSteps.forEach(step =>
+        step.classList.remove('active')
+    );
+
+    const activeStep = document.querySelector(
+        `.cpn-step[data-section="${current}"]`
+    );
+
+    if (activeStep) {
+        activeStep.classList.add('active');
+    }
+
+});
 
 /* ── Compare slider ── */
 const container = document.getElementById('compareContainer');
@@ -57,3 +86,84 @@ if (container) {
     window.addEventListener('touchend', () => dragging = false);
     window.addEventListener('touchmove', (e) => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
 }
+
+/* ── 2. CURSOR PERSONALIZADO ─────────────────────────── */
+const cursor = document.createElement('div');
+const cursorDot = document.createElement('div');
+
+cursor.id = 'cursor-ring';
+cursorDot.id = 'cursor-dot';
+
+document.body.appendChild(cursor);
+document.body.appendChild(cursorDot);
+
+// Estilos inline para no depender del CSS
+Object.assign(cursor.style, {
+    position: 'fixed',
+    width: '36px',
+    height: '36px',
+    border: '1px solid rgba(200,169,126,0.5)',
+    borderRadius: '50%',
+    pointerEvents: 'none',
+    zIndex: '10000',
+    transform: 'translate(-50%, -50%)',
+    transition: 'width 0.3s ease, height 0.3s ease, border-color 0.3s ease, opacity 0.3s ease',
+    opacity: '0',
+});
+
+Object.assign(cursorDot.style, {
+    position: 'fixed',
+    width: '5px',
+    height: '5px',
+    background: '#c8a97e',
+    borderRadius: '50%',
+    pointerEvents: 'none',
+    zIndex: '10001',
+    transform: 'translate(-50%, -50%)',
+    transition: 'opacity 0.3s ease',
+    opacity: '0',
+});
+
+let mouseX = 0, mouseY = 0;
+let ringX = 0, ringY = 0;
+let raf;
+
+document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursorDot.style.left = mouseX + 'px';
+    cursorDot.style.top = mouseY + 'px';
+    cursor.style.opacity = '1';
+    cursorDot.style.opacity = '1';
+});
+
+// Ring sigue con lag suave
+function animateCursor() {
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+    cursor.style.left = ringX + 'px';
+    cursor.style.top = ringY + 'px';
+    raf = requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// Hover sobre links y botones → ring crece
+const hoverEls = document.querySelectorAll('a, button, .case, .skills-list li');
+hoverEls.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        Object.assign(cursor.style, {
+            width: '56px',
+            height: '56px',
+            borderColor: 'rgba(200,169,126,0.9)',
+            background: 'rgba(200,169,126,0.06)',
+        });
+    });
+    el.addEventListener('mouseleave', () => {
+        Object.assign(cursor.style, {
+            width: '36px',
+            height: '36px',
+            borderColor: 'rgba(200,169,126,0.5)',
+            background: 'transparent',
+        });
+    });
+});
