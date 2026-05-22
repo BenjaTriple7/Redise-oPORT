@@ -356,7 +356,6 @@ a {
 
 .section-wide {
     padding: clamp(4rem, 7vw, 7rem) max(4vw, calc((100vw - var(--container)) / 2));
-    border-top: 1px solid var(--border);
 }
 
 .section-narrow {
