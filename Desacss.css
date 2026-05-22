@@ -351,14 +351,129 @@ a {
 }
 
 /* ── SECTION WRAPPERS ────────────────────────────────── */
-.section-wide,
-.section-narrow {
-    padding: var(--section-v) clamp(2rem, max(4vw, calc((100vw - var(--container)) / 2)), 8rem);
+
+
+
+.section-wide {
+    padding: clamp(4rem, 7vw, 7rem) max(4vw, calc((100vw - var(--container)) / 2));
     border-top: 1px solid var(--border);
 }
 
 .section-narrow {
     max-width: calc(var(--container) + 16vw);
+    padding: clamp(4rem, 7vw, 7rem) max(4vw, calc((100vw - var(--container)) / 2));
+    border-top: 1px solid var(--border);
+}
+
+.about-tech {
+    background: var(--surface);
+}
+
+.tech-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.tech-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: sticky;
+    top: 4rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-content: start;
+}
+
+.tech-item {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(200, 169, 126, 0.2);
+    border-radius: var(--radius);
+    background: rgba(200, 169, 126, 0.04);
+    transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.tech-item:hover {
+    background: rgba(200, 169, 126, 0.1);
+    border-color: rgba(200, 169, 126, 0.5);
+}
+
+.tech-item--soon {
+    opacity: 0.4;
+    font-style: italic;
+}
+
+
+/* analisis */
+
+/* ── ANÁLISIS CINEMÁTICO ─────────────────────────── */
+
+#analisis {
+    position: relative;
+
+    width: 100%;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        clamp(2rem, 4vw, 4rem);
+
+    overflow: hidden;
+
+    /* IMAGEN */
+    background-image:
+        linear-gradient(to left,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.2)),
+        url("assets/imgs/desaloon/imagen2.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* EFECTO */
+    background-attachment: fixed;
+}
+
+/* Caja contenido */
+.analysis-overlay {
+    width: min(680px, 100%);
+
+    padding:
+        clamp(2rem, 4vw, 4rem);
+
+    background: rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+}
+
+#analisis .case-note {
+    color: var(--accent);
+
+    border-left: 1px solid rgba(200, 169, 126, 0.4);
+
+    padding-left: 1rem;
 }
 
 /* ── CASE GRID ───────────────────────────────────────── */
