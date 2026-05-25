@@ -716,7 +716,7 @@ a {
     overflow: hidden;
     border-radius: 2px;
     border: 1px solid var(--border);
-    cursor: col-resize;
+    /* cursor: col-resize; */
     user-select: none;
 }
 
