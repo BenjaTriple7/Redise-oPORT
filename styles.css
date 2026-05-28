@@ -2,7 +2,7 @@
 
 /* ── TOKENS ─────────────────────────────────────────── */
 :root {
-    --bg: #000000;
+    --bg: #000000; /* 0d0d0d */
     --surface: #131313;
     --surface-2: #1a1a1a;
     --border: rgba(255, 255, 255, 0.07);
@@ -620,6 +620,7 @@ a {
 /* ── CASES ───────────────────────────────────────────── */
 .cases {
     padding: var(--gap) max(4vw, calc((100vw - var(--container)) / 2));
+    padding-bottom: 0px;
 }
 
 .cases-header {
@@ -798,8 +799,8 @@ a {
 
 .profile {
     /*     padding: var(--gap) max(4vw, calc((100vw - var(--container)) / 2));*/
-    border-top: 1px solid var(--border);
-    padding: var(--gap) max(4vw, calc((100vw - var(--container)) / 2));
+    /* border-top: 1px solid var(--border); */
+    padding: var(--gap) max(4vw, calc((96vw - var(--container)) / 2));
 }
 
 /* ── GRID BENTO ─────────────────────────────────────────── */
@@ -807,9 +808,9 @@ a {
     display: grid;
     grid-template-columns: 1.4fr 1fr;
     grid-template-rows: auto auto;
-    gap: 1px;
+    gap: 0px;
     /* gap = borde compartido */
-    border: 1px solid var(--border);
+    /* border: 1px solid var(--border); */
 }
 
 .profile-card {
@@ -827,14 +828,22 @@ a {
 .profile-bio {
     border-right: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
+    border-top: 1px solid #d4c5a980;
 }
 
 .profile-method {
     border-bottom: 1px solid var(--border);
+    border-top: 1px solid #d4c5a980;
 }
 
 .profile-skills {
     border-right: 1px solid var(--border);
+    border-bottom: 1px solid #d4c5a980;
+}
+
+.profile-contact {
+    /* border-right: 1px solid var(--border); */
+    border-bottom: 1px solid #d4c5a980;
 }
 
 /* profile-contact: sin borde extra, queda en esquina inferior derecha */
@@ -863,7 +872,7 @@ a {
     font-size: 0.95rem;
     line-height: 1.7;
     color: var(--text-muted);
-    max-width: 44ch;
+    max-width: 62ch;
 }
 
 .profile-card p+p {
