@@ -826,18 +826,18 @@ a {
 
 /* Separadores internos via outline en lugar de margin/gap */
 .profile-bio {
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    border-right: 1px solid #d4c5a980;
+    border-bottom: 1px solid #d4c5a980;
     border-top: 1px solid #d4c5a980;
 }
 
 .profile-method {
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid #d4c5a980;
     border-top: 1px solid #d4c5a980;
 }
 
 .profile-skills {
-    border-right: 1px solid var(--border);
+    border-right: 1px solid #d4c5a980;
     border-bottom: 1px solid #d4c5a980;
 }
 
