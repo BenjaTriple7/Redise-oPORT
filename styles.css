@@ -2,7 +2,7 @@
 
 /* ── TOKENS ─────────────────────────────────────────── */
 :root {
-    --bg: #0d0d0d;
+    --bg: #000000;
     --surface: #131313;
     --surface-2: #1a1a1a;
     --border: rgba(255, 255, 255, 0.07);
@@ -797,8 +797,9 @@ a {
 /* ── PROFILE (unifica about / method / skills / contact) ── */
 
 .profile {
-/*     padding: var(--gap) max(4vw, calc((100vw - var(--container)) / 2));
- */    border-top: 1px solid var(--border);
+    /*     padding: var(--gap) max(4vw, calc((100vw - var(--container)) / 2));*/
+    border-top: 1px solid var(--border);
+    padding: var(--gap) max(4vw, calc((100vw - var(--container)) / 2));
 }
 
 /* ── GRID BENTO ─────────────────────────────────────────── */
@@ -845,7 +846,7 @@ a {
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--text-dim);
+    color: var(--accent-2);
     margin-bottom: 0.5rem;
 }
 
