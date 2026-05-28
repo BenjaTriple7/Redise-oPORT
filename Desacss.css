@@ -679,7 +679,7 @@ a {
     font-size: 0.62rem;
     font-weight: 500;
     letter-spacing: 0.14em;
-    color: var(--text-dim);
+    color: #ffffffb2;
 }
 
 .phase.active .phase-num {
@@ -689,7 +689,7 @@ a {
 .phase-name {
     font-size: 0.85rem;
     font-weight: 400;
-    color: var(--text-muted);
+    color: #ffffffb2;
 }
 
 .phase.active .phase-name {
