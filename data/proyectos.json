@@ -84,7 +84,7 @@
                 }
             ],
             "parrafos": [
-                "Se desarrolló un proceso de análisis que incluyó benchmarking de sitios de bandas, definición de jerarquía de contenido y exploración visual mediante wireframes y referencias gráficas",
+                "Se desarrolló un proceso de análisis que incluyó benchmarking de sitios de bandas, definición de jerarquía de contenido y exploración visual mediante wireframes y referencias gráficas.",
                 "Se eliminaron elementos que no aportaban valor —como imágenes redundantes y títulos sobredimensionados— y se reorganizó el contenido para priorizar las fechas del tour. Al mismo tiempo, se mantuvieron componentes clave del sitio original, integrándolos dentro de una estructura más coherente y dinámica."
             ]
         },
@@ -103,6 +103,14 @@
                 "labelAntes": "Antes",
                 "labelDespues": "Después"
             }
+        },
+        "validacion": {
+            "label": "Validación",
+            "eyebrow": "Reconocimiento directo",
+            "titulo": "El proyecto llegó a la banda ;)",
+            "descripcion": "Una vez finalizado el rediseño, compartí el proyecto directamente con el cantante de De Saloon a través de Instagram. La respuesta confirmó que la propuesta logró transmitir correctamente la identidad, intención y experiencia que buscaba construir para la banda.",
+            "imagen": "assets/imgs/desaloon/aprobado.jpg",
+            "imagenAlt": "Respuesta de De Saloon en Instagram"
         },
         "resultado": {
             "label": "Resultado",
