@@ -1,0 +1,71 @@
+{
+  "orden": 0,
+  "slug": "nuevo-proyecto",
+  "titulo": "Nuevo Proyecto",
+  "descripcionCorta": "Descripción breve del proyecto para la card.",
+  "thumbnail": "assets/imgs/nuevo/cover.jpg",
+  "categorias": [
+    "UX/UI"
+  ],
+
+  "hero": {
+    "label": "Caso de estudio",
+    "titulo": "Nuevo Proyecto",
+    "descripcion": "Descripción general del proyecto y su objetivo principal.",
+    "imagen": "assets/imgs/nuevo/hero.jpg",
+    "metadata": [
+      { "label": "Rol", "value": "Diseñador UX/UI" },
+      { "label": "Herramientas", "value": "Figma" },
+      { "label": "Tipo", "value": "Proyecto personal" },
+      { "label": "Año", "value": "2026" }
+    ]
+  },
+
+  "problema": {
+    "titulo": "Título del problema",
+    "descripcion": "Descripción del problema principal.",
+    "puntos": [
+      "Problema 1",
+      "Problema 2",
+      "Problema 3"
+    ]
+  },
+
+  "analisis": {
+    "titulo": "Análisis del caso",
+    "descripcion": "Descripción del análisis realizado.",
+    "contexto": "Contexto adicional del diagnóstico."
+  },
+
+  "proceso": {
+    "titulo": "Proceso de diseño",
+    "fases": [
+      "Benchmark",
+      "Auditoría",
+      "Wireframes",
+      "Visual",
+      "Entrega"
+    ],
+    "descripcion": "Explicación del proceso de trabajo."
+  },
+
+  "solucion": {
+    "titulo": "Solución aplicada",
+    "descripcion": "Qué se hizo para resolver el problema.",
+    "detalles": [
+      "Solución 1",
+      "Solución 2",
+      "Solución 3"
+    ]
+  },
+
+  "resultado": {
+    "titulo": "Resultados",
+    "metricas": [
+      { "valor": "100%", "label": "Responsive" },
+      { "valor": "+3", "label": "Secciones nuevas" },
+      { "valor": "↑", "label": "Mejora visual" }
+    ],
+    "descripcion": "Impacto final del proyecto."
+  }
+}
