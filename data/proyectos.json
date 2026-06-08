@@ -141,5 +141,22 @@
         "proceso": {},
         "solucion": {},
         "resultado": {}
+    },
+    {
+        "orden": 3,
+        "slug": "Explosed",
+        "titulo": "Explosed",
+        "descripcionCorta": "Diseño y desarrollo web enfocado en reservas y experiencia turística.",
+        "thumbnail": "assets/imgs/Explosed/Explosedhero.JPG",
+        "categorias": [
+            "Corporativo",
+            "WordPress"
+        ],
+        "hero": {},
+        "problema": {},
+        "analisis": {},
+        "proceso": {},
+        "solucion": {},
+        "resultado": {}
     }
 ]
