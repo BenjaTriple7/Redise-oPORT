@@ -124,5 +124,22 @@
             ],
             "sitio": "https://benjatriple7.github.io/Redise-oDeSaloon/"
         }
+    },
+    {
+        "orden": 2,
+        "slug": "domos-patagonia",
+        "titulo": "Huincacara Lodge",
+        "descripcionCorta": "Diseño y desarrollo web enfocado en reservas y experiencia turística.",
+        "thumbnail": "assets/imgs/Huincacara/domohero2.png",
+        "categorias": [
+            "Turismo",
+            "WordPress"
+        ],
+        "hero": {},
+        "problema": {},
+        "analisis": {},
+        "proceso": {},
+        "solucion": {},
+        "resultado": {}
     }
 ]
