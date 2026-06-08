@@ -1,7 +1,9 @@
 {
 
     "orden": 1,
-    
+
+    "destacado": true,
+
     "slug": "desaloon",
 
     "titulo": "DeSaloon",

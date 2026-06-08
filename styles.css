@@ -1832,3 +1832,12 @@ a {
         border-top: 1px solid var(--border);
     }
 }
+
+
+/* Proyectos */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}

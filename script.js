@@ -126,7 +126,7 @@ nav.id = 'floating-nav';
 nav.innerHTML = `
   <a href="index.html"><span class="nav-name">Benjamín Sánchez</span></a>
   <div class="nav-links">
-    <a href="#casos">Casos</a>
+    <a href="proyectos.html">Casos</a>
     <a href="#sobre">Información</a>
     <a href="about.html">Sobre mi</a>
   </div>
