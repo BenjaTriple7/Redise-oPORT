@@ -9,16 +9,55 @@ async function cargarProyecto() {
     const container = document.getElementById('projectContent');
 
     container.innerHTML = `
+        ${renderHeader(proyecto.layout)}
+        ${renderNav(proyecto.layout)}
         ${renderHero(proyecto.hero)}
         ${renderProblema(proyecto.problema)}
         ${renderAnalisis(proyecto.analisis)}
         ${renderProceso(proyecto.proceso)}
         ${renderSolucion(proyecto.solucion)}
+        ${renderValidacion(proyecto.validacion)}
         ${renderResultado(proyecto.resultado)}
     `;
 }
 cargarProyecto();
 
+function renderHeader(layout) {
+
+    return `
+    <header class="case-header" id="caseHeader">
+
+        <a href="${layout.header.linkBack}" class="case-header-back">
+            ← Proyectos
+        </a>
+
+        <span class="case-header-name">
+            ${layout.header.nombre}
+        </span>
+
+    </header>
+    `;
+}
+function renderNav(layout) {
+
+    const items = layout.nav
+        .map(item => `
+            <a href="#${item.id}" class="cpn-step" data-section="${item.id}">
+                ${item.label}
+            </a>
+        `)
+        .join('');
+
+    return `
+    <nav class="case-progress-nav" id="caseNav">
+        <div class="cpn-inner">
+            <div class="cpn-steps">
+                ${items}
+            </div>
+        </div>
+    </nav>
+    `;
+}
 
 function renderHero(hero) {
     const metadataHTML = hero.metadata

@@ -131,6 +131,34 @@
                 }
             ],
             "sitio": "https://benjatriple7.github.io/Redise-oDeSaloon/"
+        },
+        "layout": {
+            "header": {
+                "nombre": "Benjamín Sánchez",
+                "linkBack": "index.html#casos"
+            },
+            "nav": [
+                {
+                    "id": "problema",
+                    "label": "Problema"
+                },
+                {
+                    "id": "analisis",
+                    "label": "Análisis"
+                },
+                {
+                    "id": "proceso",
+                    "label": "Proceso"
+                },
+                {
+                    "id": "solucion",
+                    "label": "Solución"
+                },
+                {
+                    "id": "resultado",
+                    "label": "Resultado"
+                }
+            ]
         }
     },
     {
