@@ -1,8 +1,3 @@
-/* ============================================================
-   BENJAMÍN SÁNCHEZ — PORTFOLIO JS
-   ============================================================ */
-
-/* ── 1. SCROLL REVEAL ────────────────────────────────── */
 const revealTargets = document.querySelectorAll(
     '.case, .about-right p, .skills-list li, .method-right p, .contact h2, .contact > p'
 );
