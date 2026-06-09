@@ -225,7 +225,7 @@ if (marqueeSection) {
       overflow: hidden;
       border-top: 1px solid rgba(255,255,255,0.07);
       padding: 0.9rem 0;
-      background: #131313;
+      background: #0a0a0a;
     }
     .ticker-inner {
       display: inline-block;
