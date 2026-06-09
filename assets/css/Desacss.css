@@ -229,6 +229,7 @@ a {
     border-radius: 100px;
     transition: color 0.2s, background 0.2s;
     white-space: nowrap;
+    cursor: none;
 }
 
 .cpn-step:hover {
@@ -604,7 +605,7 @@ a {
     font-style: italic;
     font-size: 5rem;
     line-height: 1;
-    color: rgba(255, 255, 255, 0.025);
+    color: rgba(255, 255, 255, 0.144);
     pointer-events: none;
     user-select: none;
 }
@@ -959,6 +960,7 @@ a {
 .reveal-img.visible {
     opacity: 1;
     transform: none;
+    cursor: none;
 }
 
 /* Delay helpers */
