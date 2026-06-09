@@ -12,7 +12,7 @@ function initPage() {
     setTimeout(() => {
 
         console.log('Dentro del reveal');
-        
+
         const reveals = document.querySelectorAll('.reveal, .reveal-img');
 
         console.log('Reveals encontrados:', reveals.length);
@@ -22,7 +22,7 @@ function initPage() {
                 if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
             });
         }, { threshold: 0.1 });
-        
+
         reveals.forEach(el => revealObs.observe(el));
     }, 100);
 
@@ -58,6 +58,45 @@ function initPage() {
     const container = document.getElementById('compareContainer');
     const beforeEl = document.getElementById('compareBefore');
     const handleEl = document.getElementById('compareHandle');
+
+    console.log('Container:', container);
+
+    if (container) {
+
+        console.log('Slider iniciado');
+
+        let dragging = false;
+
+        const setPos = (x) => {
+
+            console.log('Moviendo slider');
+
+            const r = container.getBoundingClientRect();
+            let pct = ((x - r.left) / r.width) * 100;
+            pct = Math.max(5, Math.min(95, pct));
+
+            beforeEl.style.width = pct + '%';
+            handleEl.style.left = pct + '%';
+        };
+
+        container.addEventListener('mousedown', (e) => {
+            console.log('mousedown');
+            dragging = true;
+            setPos(e.clientX);
+        });
+
+        window.addEventListener('mouseup', () => {
+            console.log('mouseup');
+            dragging = false;
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (dragging) {
+                console.log('mousemove');
+                setPos(e.clientX);
+            }
+        });
+    }
     if (container) {
         let dragging = false;
         const setPos = (x) => {
