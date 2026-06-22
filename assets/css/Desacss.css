@@ -2,7 +2,8 @@
 
 /* ── TOKENS ─────────────────────────────────────────── */
 :root {
-    --bg: #000000;   /* 0d0d0d */
+    --bg: #000000;
+    /* 0d0d0d */
     --surface: #131313;
     --surface-2: #1a1a1a;
     --border: rgba(255, 255, 255, 0.07);
@@ -1072,5 +1073,139 @@ a {
     #resultado .btn+.btn {
         margin-left: 0;
         margin-top: 0.5rem;
+    }
+}
+
+/* ══════════════════════════════════════════════════════
+   HILO CONDUCTOR — Timeline vertical de scroll
+   Conecta visualmente todas las secciones del caso de estudio.
+   Usa los mismos tokens del sistema (--accent-2, --accent-hot, --border).
+   ══════════════════════════════════════════════════════ */
+
+.thread-line {
+    position: fixed;
+    top: 0;
+    left: clamp(1.25rem, 3vw, 2.5rem);
+    height: 100svh;
+    width: 1px;
+    z-index: 50;
+    pointer-events: none;
+    /* aparece junto con el progress nav, no antes */
+    opacity: 0;
+    transition: opacity 0.5s var(--ease);
+}
+
+.thread-line.visible {
+    opacity: 1;
+}
+
+/* Riel base, siempre presente, muy sutil */
+.thread-line-track {
+    position: absolute;
+    inset: 0;
+    width: 1px;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            var(--border) 6%,
+            var(--border) 94%,
+            transparent 100%);
+}
+
+/* Trazo que se "llena" según el progreso del scroll */
+.thread-line-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 0%;
+    background: linear-gradient(to bottom,
+            var(--accent-hot) 0%,
+            var(--accent-2) 100%);
+    box-shadow: 0 0 10px rgba(200, 169, 126, 0.35);
+    transition: height 0.15s linear;
+    will-change: height;
+}
+
+/* Punto inicial / final, marca arranque y cierre del recorrido */
+.thread-line::before,
+.thread-line::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--text-dim);
+    transform: translateX(-50%);
+}
+
+.thread-line::before {
+    top: -2px;
+}
+
+.thread-line::after {
+    bottom: -2px;
+}
+
+/* ── NODOS POR SECCIÓN ────────────────────────────────── */
+.thread-node {
+    position: absolute;
+    left: 50%;
+    width: 9px;
+    height: 9px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid var(--text-dim);
+    transition: border-color 0.35s var(--ease),
+        background 0.35s var(--ease),
+        box-shadow 0.35s var(--ease),
+        transform 0.35s var(--ease);
+}
+
+/* Etiqueta lateral del nodo (nombre de sección) */
+.thread-node-label {
+    position: absolute;
+    left: 1.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.35s var(--ease), color 0.35s var(--ease);
+}
+
+/* Estado: sección ya recorrida (debajo del progreso actual) */
+.thread-node.passed {
+    background: var(--accent-2);
+    border-color: var(--accent-2);
+}
+
+/* Estado: sección activa actualmente en viewport */
+.thread-node.active {
+    background: var(--accent-hot);
+    border-color: var(--accent-hot);
+    box-shadow: 0 0 0 4px rgba(200, 169, 126, 0.15),
+        0 0 14px rgba(200, 169, 126, 0.45);
+    transform: translate(-50%, -50%) scale(1.35);
+}
+
+.thread-node.active+.thread-node-label,
+.thread-node:hover+.thread-node-label {
+    opacity: 1;
+    color: var(--accent-2);
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────── */
+/* En mobile el progreso ya lo comunica la pastilla inferior;
+   ocultamos la línea lateral para no competir por espacio. */
+@media (max-width: 768px) {
+    .thread-line {
+        display: none;
     }
 }

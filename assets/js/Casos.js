@@ -13,54 +13,6 @@ const revealObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 reveals.forEach(el => revealObs.observe(el));
 
-/* ── Progress nav: aparece al salir del hero ── */
-const caseNav = document.getElementById('caseNav');
-const heroObs = new IntersectionObserver(([e]) => {
-    caseNav.classList.toggle('visible', !e.isIntersecting);
-}, { threshold: 0 });
-heroObs.observe(document.querySelector('.case-hero'));
-
-/* ── Step activo ── */
-const navSteps = document.querySelectorAll('.cpn-step');
-
-const sections = [
-    document.getElementById('problema'),
-    document.getElementById('analisis'),
-    document.getElementById('proceso'),
-    document.getElementById('solucion'),
-    document.getElementById('resultado')
-];
-
-window.addEventListener('scroll', () => {
-
-    let current = '';
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-
-        if (
-            window.scrollY >= sectionTop - window.innerHeight * 0.4
-        ) {
-            current = section.getAttribute('id');
-        }
-
-    });
-
-    navSteps.forEach(step =>
-        step.classList.remove('active')
-    );
-
-    const activeStep = document.querySelector(
-        `.cpn-step[data-section="${current}"]`
-    );
-
-    if (activeStep) {
-        activeStep.classList.add('active');
-    }
-
-});
 
 /* ── Compare slider ── */
 const container = document.getElementById('compareContainer');
@@ -167,3 +119,139 @@ hoverEls.forEach(el => {
         });
     });
 });
+/* ══════════════════════════════════════════════════════
+   HILO CONDUCTOR — thread-line.js
+   Crea una línea vertical fija que conecta todas las
+   secciones del caso de estudio, con nodos que se activan
+   a medida que el usuario hace scroll.
+   ══════════════════════════════════════════════════════ */
+
+(function () {
+
+    // Secciones a conectar, en orden. Deben coincidir con los <section id="...">
+    const SECTIONS = [
+        { id: 'problema', label: 'Problema' },
+        { id: 'analisis', label: 'Análisis' },
+        { id: 'proceso', label: 'Proceso' },
+        { id: 'solucion', label: 'Solución' },
+        { id: 'resultado', label: 'Resultado' }
+    ];
+
+    let lineEl, fillEl, trackHeight = 0;
+    const nodes = [];
+
+    function buildThreadLine() {
+        // Contenedor principal
+        lineEl = document.createElement('div');
+        lineEl.className = 'thread-line';
+        lineEl.id = 'threadLine';
+
+        const track = document.createElement('div');
+        track.className = 'thread-line-track';
+
+        fillEl = document.createElement('div');
+        fillEl.className = 'thread-line-fill';
+
+        lineEl.appendChild(track);
+        lineEl.appendChild(fillEl);
+
+        // Nodos por sección existente en el DOM
+        SECTIONS.forEach(section => {
+            const target = document.getElementById(section.id);
+            if (!target) return;
+
+            const node = document.createElement('div');
+            node.className = 'thread-node';
+
+            const label = document.createElement('span');
+            label.className = 'thread-node-label';
+            label.textContent = section.label;
+
+            lineEl.appendChild(node);
+            lineEl.appendChild(label);
+
+            nodes.push({ id: section.id, target, node, label });
+        });
+
+        document.body.appendChild(lineEl);
+    }
+
+    function positionNodes() {
+        const lineRect = lineEl.getBoundingClientRect();
+        const scrollY = window.scrollY || window.pageYOffset;
+
+        trackHeight = lineEl.offsetHeight;
+
+        nodes.forEach(item => {
+            const rect = item.target.getBoundingClientRect();
+            // Posición del centro vertical de la sección, relativa al documento
+            const sectionCenter = rect.top + scrollY + rect.height / 2;
+            // Posición relativa al inicio de la línea (que es fixed, ocupa 100svh desde top:0)
+            const ratio = sectionCenter / document.documentElement.scrollHeight;
+            const top = ratio * trackHeight;
+
+            item.node.style.top = top + 'px';
+            item.label.style.top = top + 'px';
+        });
+    }
+
+    function updateProgress() {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollY = window.scrollY || window.pageYOffset;
+        const progress = docHeight > 0 ? Math.min(Math.max(scrollY / docHeight, 0), 1) : 0;
+
+        fillEl.style.height = (progress * 100) + '%';
+
+        // Mostrar la línea solo una vez que el usuario empieza a recorrer el caso
+        if (scrollY > 80) {
+            lineEl.classList.add('visible');
+        } else {
+            lineEl.classList.remove('visible');
+        }
+
+        // Estado de cada nodo según scroll
+        const viewportCenter = scrollY + window.innerHeight * 0.5;
+
+        nodes.forEach(item => {
+            const rect = item.target.getBoundingClientRect();
+            const sectionTop = rect.top + scrollY;
+            const sectionBottom = sectionTop + rect.height;
+
+            item.node.classList.remove('active', 'passed');
+
+            if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
+                item.node.classList.add('active');
+            } else if (viewportCenter > sectionBottom) {
+                item.node.classList.add('passed');
+            }
+        });
+    }
+
+    function onScrollOrResize() {
+        window.requestAnimationFrame(() => {
+            positionNodes();
+            updateProgress();
+        });
+    }
+
+    function init() {
+        buildThreadLine();
+        if (nodes.length === 0) return; // nada que conectar
+
+        positionNodes();
+        updateProgress();
+
+        window.addEventListener('scroll', onScrollOrResize, { passive: true });
+        window.addEventListener('resize', onScrollOrResize);
+
+        // Recalcular posiciones cuando cargan imágenes (cambia el alto del documento)
+        window.addEventListener('load', onScrollOrResize);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+})();
