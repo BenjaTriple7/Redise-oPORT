@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap');
+
+/* ── TOKENS ─────────────────────────────────────────── */
+:root {
+    --bg: #000000;
+    /* 0d0d0d */
+    --surface: #131313;
+    --surface-2: #1a1a1a;
+    --border: rgba(255, 255, 255, 0.07);
+    --text: #f0ede8;
+    --text-muted: #8a8680;
+    --text-dim: #4a4745;
+    --accent: #d4c5a9;
+    --accent-2: #c8a97e;
+    --accent-hot: #e8d5a3;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --radius: 3px;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --container: min(1160px, 92vw);
+    --section-v: clamp(5rem, 9vw, 10rem);
+}
+
+/* ── RESET ───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    cursor: none;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Grain overlay */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.028;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ── TIPOGRAFÍA ──────────────────────────────────────── */
+h1,
+h2,
+h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    color: var(--text);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: var(--text);
+}
+
+p {
+    font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+.small {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ── BOTONES ─────────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.6rem;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    background: var(--accent-2);
+    color: var(--bg);
+    border: 1px solid var(--accent-2);
+    border-radius: var(--radius);
+    transition: background 0.25s var(--ease), transform 0.2s var(--ease), box-shadow 0.25s var(--ease);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    background: var(--accent-hot);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(200, 169, 126, 0.2);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.btn-ghost:hover {
+    background: var(--surface-2);
+    border-color: var(--text-dim);
+    box-shadow: none;
+}
+
+/* ── HEADER FLOTANTE ─────────────────────────────────── */
+.case-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem clamp(2rem, 5vw, 5rem);
+    transition: background 0.4s var(--ease), border-color 0.4s var(--ease), backdrop-filter 0.4s var(--ease);
+    border-bottom: 1px solid transparent;
+}
+
+.case-header.scrolled {
+    background: rgba(13, 13, 13, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-color: var(--border);
+}
+
+.case-header-name {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    transition: color 0.2s;
+    cursor: none;
+}
+
+.case-header-name:hover {
+    color: var(--text);
+}
+
+.case-header-back {
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+    transition: color 0.2s;
+    cursor: none;
+}
+
+.case-header-back:hover {
+    color: var(--accent-2);
+}
+
+/* ── PROGRESS NAV ────────────────────────────────────── */
+.case-progress-nav {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(12px);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 200;
+    transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+}
+
+.case-progress-nav.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: all;
+}
+
+.cpn-inner {
+    background: rgba(19, 19, 19, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.55rem 1rem;
+}
+
+.cpn-steps {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.cpn-step {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: #ffff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 100px;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+    cursor: none;
+}
+
+.cpn-step:hover {
+    color: var(--text-muted);
+}
+
+.cpn-step.active {
+    color: var(--bg);
+    background: var(--accent-2);
+}
+
+.case-timeline {
+    position: relative;
+}
+
+/* Rail: línea vertical fija que recorre todas las etapas.
+   Se posiciona a la izquierda en desktop, centrada en mobile. */
+.timeline-rail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: clamp(1.25rem, 4vw, 3.25rem);
+    width: 1px;
+    background: var(--border);
+    z-index: 1;
+}
+
+.timeline-rail-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(to bottom, var(--accent-2), var(--accent));
+    transition: height 0.15s linear;
+}
+
+/* Cada etapa es un contenedor relativo para anclar su nodo
+   y para que el padding entre secciones sea consistente. */
+.timeline-stage {
+    position: relative;
+    padding: var(--section-v) 0;
+    padding-left: clamp(2.5rem, 7vw, 6rem);
+}
+
+.timeline-stage+.timeline-stage {
+    border-top: 1px solid var(--border);
+}
+
+/* Nodo numerado: marca el punto de la línea correspondiente
+   a esta etapa. Se "enciende" cuando la sección está activa. */
+.stage-marker {
+    position: absolute;
+    top: calc(var(--section-v) * 0.62);
+    left: clamp(1.25rem, 4vw, 3.25rem);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: border-color 0.4s var(--ease), background 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.stage-marker-num {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text-dim);
+    transition: color 0.4s var(--ease);
+}
+
+.timeline-stage.is-active .stage-marker {
+    border-color: var(--accent-2);
+    background: var(--surface-2);
+    box-shadow: 0 0 0 4px rgba(200, 169, 126, 0.08);
+}
+
+.timeline-stage.is-active .stage-marker-num {
+    color: var(--accent-2);
+}
+
+.stage-marker-end {
+    top: 3.25rem;
+}
+
+/* Eyebrow de etapa: reemplaza el "small" suelto, deja explícito
+   en qué número de etapa va el usuario sin depender solo del nodo. */
+.stage-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* Frase puente al cierre de cada etapa, conecta con la siguiente. */
+.stage-transition {
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px dashed var(--border);
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-dim);
+}
+
+/* Sección de análisis: ahora usa el mismo grid que el resto,
+   con la imagen como apoyo lateral en vez de fondo full-bleed. */
+.case-media {
+    display: flex;
+    align-items: center;
+}
+
+.case-media .case-img-large {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    display: block;
+}
+
+/* Etapa final: cierra el rail visualmente, sin borde superior
+   duplicado respecto a la guía dashed de la etapa previa. */
+.timeline-stage-end {
+    padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+/* ── Responsive: en mobile el rail se acerca al borde ───── */
+@media (max-width: 720px) {
+    .timeline-rail {
+        left: 1rem;
+    }
+
+    .stage-marker {
+        left: 1rem;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .timeline-stage {
+        padding-left: 2.5rem;
+    }
+}
